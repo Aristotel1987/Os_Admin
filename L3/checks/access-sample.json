@@ -1,0 +1,40 @@
+{ "ts":"2025-10-19T17:14:04-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.002,
+     "upstream":"10.100.0.3:8080", "req_id":"59e4859dd7ab29abe14808c31686ec98", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:14:05-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.004,
+     "upstream":"10.100.0.2:8080", "req_id":"96a6614cbd5f60373e348b71c5a18ad5", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:14:06-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.004,
+     "upstream":"10.100.0.3:8080", "req_id":"e66007ac80067a09980682e226a5df5f", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:14:06-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.003,
+     "upstream":"10.100.0.2:8080", "req_id":"df63e22cb528a10efde7a0fb70f7e970", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:14:07-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.002, "urt":0.003,
+     "upstream":"10.100.0.3:8080", "req_id":"0579c296c3a294e1b9671cb25943c8c1", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:14:13-04:00", "remote":"127.0.0.1", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.002, "urt":0.002,
+     "upstream":"10.100.0.2:8080", "req_id":"0ae160c0f883fa87d94d4d36aad9ea5e", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" }
+{ "ts":"2025-10-19T17:14:14-04:00", "remote":"127.0.0.1", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.002, "urt":0.002,
+     "upstream":"10.100.0.3:8080", "req_id":"d3760eef920e2434f2673ddf500713a6", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" }
+{ "ts":"2025-10-19T17:14:14-04:00", "remote":"127.0.0.1", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.003,
+     "upstream":"10.100.0.2:8080", "req_id":"685f06deebc99d5184e4555350fda446", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" }
+{ "ts":"2025-10-19T17:14:15-04:00", "remote":"127.0.0.1", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.002, "urt":0.002,
+     "upstream":"10.100.0.3:8080", "req_id":"2205834f8fe28a843392936c05023676", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" }
+{ "ts":"2025-10-19T17:14:16-04:00", "remote":"127.0.0.1", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.002, "urt":0.002,
+     "upstream":"10.100.0.2:8080", "req_id":"e0a9c0a8a29c4124710b2a8f0ea82f50", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" }

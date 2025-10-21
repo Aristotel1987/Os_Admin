@@ -1,0 +1,14 @@
+[Unit]
+Description=Simple HTTP backend
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Environment=APP_NAME=%i PORT=8080
+ExecStart=/usr/bin/python3 /opt/simple-backend/app.py
+Restart=always
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target

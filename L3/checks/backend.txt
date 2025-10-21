@@ -1,0 +1,4 @@
+osboxes@proxy01:~$ curl -s http://app01.dc.local:8080/
+backend= host=app01 time=2025-10-19T20:59:52.276747Z
+osboxes@proxy01:~$ curl -s http://app02.dc.local:8080/
+backend= host=app02 time=2025-10-19T20:59:57.361983Z

@@ -1,0 +1,6 @@
+proxy01:~$ host app01.dc.local
+app01.dc.local has address 10.100.0.2
+osboxes@proxy01:~$ host app02.dc.local
+app02.dc.local has address 10.100.0.3
+osboxes@proxy01:~$ host proxy01.dc.local
+proxy01.dc.local has address 10.100.0.1

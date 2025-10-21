@@ -1,0 +1,10 @@
+127.0.0.1	localhost
+
+10.100.0.1 	proxy01.dc.local
+10.100.0.2	app01.dc.local
+10.100.0.3	app02.dc.local
+
+10.100.0.1	proxy01
+10.100.0.2	app01
+10.100.0.3	app02
+

@@ -1,0 +1,40 @@
+{ "ts":"2025-10-19T17:12:08-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.001, 0.002,
+     "upstream":"10.100.0.3:8080, 10.100.0.2:8080", "req_id":"cf29ca3bfd46ea75daf1668edc7c7613", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:12:09-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.002,
+     "upstream":"10.100.0.2:8080", "req_id":"b2ddfd8c1a7a25255de7c489f42b8376", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:12:35-04:00", "remote":"127.0.0.1", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.001, 0.002,
+     "upstream":"10.100.0.3:8080, 10.100.0.2:8080", "req_id":"cdf1df91de0eb0e9ef6d5cefb7e00031", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" }
+{ "ts":"2025-10-19T17:12:36-04:00", "remote":"127.0.0.1", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.002, "urt":0.002,
+     "upstream":"10.100.0.2:8080", "req_id":"fd34c93ae534e41340778dfb548f66ac", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" }
+{ "ts":"2025-10-19T17:12:37-04:00", "remote":"127.0.0.1", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.002,
+     "upstream":"10.100.0.2:8080", "req_id":"0658012621aa2faff82ac828d6853066", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" }
+{ "ts":"2025-10-19T17:12:51-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.002, "urt":0.003,
+     "upstream":"10.100.0.2:8080", "req_id":"ab105bcba4f248d204009969754a1d68", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:12:52-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.004, "urt":0.001, 0.002,
+     "upstream":"10.100.0.3:8080, 10.100.0.2:8080", "req_id":"2b86aacc2cfa5b36cc892d1c3519844e", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:14:02-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.003,
+     "upstream":"10.100.0.2:8080", "req_id":"205955d7fe0854aaf43d3e56e38094f9", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:14:03-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.003,
+     "upstream":"10.100.0.3:8080", "req_id":"930174a83da4652a157e25d0b75877d1", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
+{ "ts":"2025-10-19T17:14:04-04:00", "remote":"192.168.1.6", "req":"GET / HTTP/1.1",
+     "status":200, "bytes":64,
+     "rt":0.003, "urt":0.002,
+     "upstream":"10.100.0.2:8080", "req_id":"ab7aa01a651f132d94e1ba6492a7c3dd", "ua":"Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" }
