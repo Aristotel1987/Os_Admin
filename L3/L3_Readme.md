@@ -86,7 +86,7 @@ sudo apt -y install ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 # Разрешить 8080 только от proxy01
-sudo ufw allow from 10.10.0.10 to any port 8080 proto tcp
+sudo ufw allow from 10.10.0.01 to any port 8080 proto tcp
 sudo ufw enable
 sudo ufw status verbose
 На proxy01 ограничить входящие):

@@ -1,0 +1,1 @@
+BOOT_IMAGE=/boot/vmlinuz-6.1.0-40-amd64 root=UUID=13004976-f859-4449-b4f3-bf826315c551 ro quiet splash intel_idle.max_cstate=0 noinvpcid nopcid nopti nospectre_v2 processor.max_cstate=1 apparmor=0

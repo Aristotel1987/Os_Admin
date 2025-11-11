@@ -1,0 +1,82 @@
+
+===== 1) /etc/default/grub: GRUB_CMDLINE_* =====
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash intel_idle.max_cstate=0 noinvpcid nopcid nopti nospectre_v2 processor.max_cstate=1 apparmor=0"
+GRUB_CMDLINE_LINUX=""
+
+===== 2) Что реально применилось при загрузке (/proc/cmdline) =====
+BOOT_IMAGE=/boot/vmlinuz-6.1.0-40-amd64 root=UUID=13004976-f859-4449-b4f3-bf826315c551 ro quiet splash intel_idle.max_cstate=0 noinvpcid nopcid nopti nospectre_v2 processor.max_cstate=1 apparmor=0
+
+===== 3) C-states: intel_idle и processor =====
+intel_idle/max_cstate: 0
+processor/max_cstate: 1
+
+===== 4) AppArmor состояние =====
+apparmor/enabled: N
+
+===== 5) Уязвимости/mitigations (Spectre/Meltdown/etc) + сводка =====
+-- подробные строки --
+gather_data_sampling: Not affected
+indirect_target_selection: Not affected
+itlb_multihit: Not affected
+l1tf: Not affected
+mds: Not affected
+meltdown: Not affected
+mmio_stale_data: Not affected
+reg_file_data_sampling: Not affected
+retbleed: Not affected
+spec_rstack_overflow: Mitigation: safe RET
+spec_store_bypass: Mitigation: Speculative Store Bypass disabled via prctl
+spectre_v1: Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+spectre_v2: Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Not affected
+srbds: Not affected
+tsa: Vulnerable: Clear CPU buffers attempted, no microcode
+tsx_async_abort: Not affected
+vmscape: Mitigation: IBPB before exit to userspace
+-- сводка (имя: значение) --
+gather_data_sampling: Not affected
+indirect_target_selection: Not affected
+itlb_multihit: Not affected
+l1tf: Not affected
+mds: Not affected
+meltdown: Not affected
+mmio_stale_data: Not affected
+reg_file_data_sampling: Not affected
+retbleed: Not affected
+spec_rstack_overflow: Mitigation: safe RET
+spec_store_bypass: Mitigation: Speculative Store Bypass disabled via prctl
+spectre_v1: Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+spectre_v2: Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Not affected
+srbds: Not affected
+tsa: Vulnerable: Clear CPU buffers attempted, no microcode
+tsx_async_abort: Not affected
+vmscape: Mitigation: IBPB before exit to userspace
+
+===== 6) Dmesg подтверждения (PTI/Spectre/PCID/INVPCID) =====
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-6.1.0-40-amd64 root=UUID=13004976-f859-4449-b4f3-bf826315c551 ro quiet splash intel_idle.max_cstate=0 noinvpcid nopcid nopti nospectre_v2 processor.max_cstate=1 apparmor=0
+[    0.000000] noinvpcid: INVPCID feature disabled
+[    0.008950] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.1.0-40-amd64 root=UUID=13004976-f859-4449-b4f3-bf826315c551 ro quiet splash intel_idle.max_cstate=0 noinvpcid nopcid nopti nospectre_v2 processor.max_cstate=1 apparmor=0
+[    0.009010] Unknown kernel command line parameters "splash nopti nospectre_v2 BOOT_IMAGE=/boot/vmlinuz-6.1.0-40-amd64", will be passed to user space.
+[    0.025861] rcu: Preemptible hierarchical RCU implementation.
+[    0.049122] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.049124] Spectre V2 : User space: Vulnerable
+[    0.233129] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    1.136429]     nopti
+[    1.136430]     nospectre_v2
+[    3.092164] amdgpu 0000:36:00.0: amdgpu: RAS: optional ras ta ucode is not available
+[    3.100298] amdgpu 0000:36:00.0: amdgpu: RAP: optional rap ta ucode is not available
+[    4.513640] AES CTR mode by8 optimization enabled
+
+===== 7) Флаги CPU (для PCID/INVPCID) =====
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase bmi1 avx2 smep bmi2 erms cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload vgif x2avic v_spec_ctrl avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid overflow_recov succor smca fsrm flush_l1d ibpb_exit_to_user
+
+===== 8) Наличие модулей (lsmod: intel_idle, processor, apparmor) =====
+[intel_idle]
+not in lsmod (may be built-in)
+
+[processor]
+not in lsmod (may be built-in or unused)
+
+[apparmor]
+not in lsmod (may be built-in or disabled)
+
+Saved to: /home/Ilya/L7_tuning/logs/L7_dump_2025-11-10_153555.txt
