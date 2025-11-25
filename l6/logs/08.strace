@@ -1,0 +1,229 @@
+17:09:09.861702 execve("/usr/bin/python3", ["python3", "-c", "open('/etc/shadow').read()"], 0xffffe0dbe7f8 /* 31 vars */) = 0 <0.001534>
+17:09:09.864524 faccessat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/ld.so.preload", R_OK) = -1 ENOENT (Нет такого файла или каталога) <0.000187>
+17:09:09.866134 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache> <0.000134>
+17:09:09.867447 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libm.so.6> <0.000156>
+17:09:09.869548 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libz.so.1.3.1> <0.000162>
+17:09:09.871985 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libexpat.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libexpat.so.1.10.2> <0.000124>
+17:09:09.874498 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libc.so.6> <0.000194>
+17:09:09.881417 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/proc/sys/vm/overcommit_memory", O_RDONLY) = 3</proc/sys/vm/overcommit_memory> <0.000176>
+17:09:09.883588 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3</usr/lib/locale/locale-archive> <0.000195>
+17:09:09.885039 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache> <0.000127>
+17:09:09.902503 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/bin/python3", 0xffffd0feca60, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000397>
+17:09:09.903537 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3", {st_mode=S_IFREG|0755, st_size=6673720, ...}, 0) = 0 <0.000072>
+17:09:09.904157 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/pyvenv.cfg", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000085>
+17:09:09.904595 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/pyvenv.cfg", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000149>
+17:09:09.905322 readlinkat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3", "python3.13", 4096) = 10 <0.000060>
+17:09:09.905706 readlinkat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3.13", 0xffffd0fe7a90, 4096) = -1 EINVAL (Недопустимый аргумент) <0.000053>
+17:09:09.906005 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3._pth", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000082>
+17:09:09.906372 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3.13._pth", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000171>
+17:09:09.907165 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/pybuilddir.txt", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000144>
+17:09:09.907871 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/Modules/Setup.local", 0xffffd0feca60, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000155>
+17:09:09.908574 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/lib/python313.zip", 0xffffd0fec790, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000069>
+17:09:09.909047 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python313.zip", 0xffffd0fec7f0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000067>
+17:09:09.909438 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/lib/python3.13/os.py", 0xffffd0fec7f0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000058>
+17:09:09.909748 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/lib/python3.13/os.pyc", 0xffffd0fec7f0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000057>
+17:09:09.910264 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/os.py", {st_mode=S_IFREG|0644, st_size=41635, ...}, 0) = 0 <0.000163>
+17:09:09.911085 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/lib/python3.13/lib-dynload", 0xffffd0fec7f0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000088>
+17:09:09.911601 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000060>
+17:09:09.911904 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000053>
+17:09:09.922856 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3</usr/share/zoneinfo/Europe/Moscow> <0.000195>
+17:09:09.925467 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python313.zip", 0xffffd0fec3f0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000078>
+17:09:09.926020 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000059>
+17:09:09.926427 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python313.zip", 0xffffd0fec710, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000055>
+17:09:09.926943 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000081>
+17:09:09.927558 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000111>
+17:09:09.928273 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000065>
+17:09:09.928777 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3.13> <0.000082>
+17:09:09.930476 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.cpython-313-aarch64-linux-gnu.so", 0xffffd0fec710, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000073>
+17:09:09.931010 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.abi3.so", 0xffffd0fec710, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000056>
+17:09:09.931357 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.abi3-aarch64-linux-gnu.so", 0xffffd0fec710, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000063>
+17:09:09.931719 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.so", 0xffffd0fec710, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000055>
+17:09:09.932042 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.py", {st_mode=S_IFREG|0644, st_size=5884, ...}, 0) = 0 <0.000057>
+17:09:09.932697 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.py", {st_mode=S_IFREG|0644, st_size=5884, ...}, 0) = 0 <0.000091>
+17:09:09.933423 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc> <0.000181>
+17:09:09.941810 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000094>
+17:09:09.942456 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000070>
+17:09:09.942991 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000061>
+17:09:09.943405 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3.13/encodings> <0.000387>
+17:09:09.945703 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/aliases.py", {st_mode=S_IFREG|0644, st_size=15713, ...}, 0) = 0 <0.000110>
+17:09:09.946863 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/aliases.py", {st_mode=S_IFREG|0644, st_size=15713, ...}, 0) = 0 <0.000080>
+17:09:09.947475 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc> <0.000087>
+17:09:09.950564 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000083>
+17:09:09.951311 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/utf_8.py", {st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0 <0.000086>
+17:09:09.952053 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/utf_8.py", {st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0 <0.000064>
+17:09:09.952455 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc> <0.000087>
+17:09:09.986690 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/pyvenv.cfg", 0xffffd0fec170, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000091>
+17:09:09.987308 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/pyvenv.cfg", 0xffffd0fec1d0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000078>
+17:09:09.988514 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/.local/lib/python3.13/site-packages", 0xffffd0fec3e0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000076>
+17:09:09.989169 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000103>
+17:09:09.989921 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/local/lib/python3.13/dist-packages> <0.000183>
+17:09:09.991262 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000062>
+17:09:09.992249 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3/dist-packages> <0.000098>
+17:09:09.993756 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/dist-packages", 0xffffd0fec440, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000068>
+17:09:09.994785 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000071>
+17:09:09.995271 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/sitecustomize.py", {st_mode=S_IFREG|0644, st_size=155, ...}, 0) = 0 <0.000111>
+17:09:09.995933 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/sitecustomize.py", {st_mode=S_IFREG|0644, st_size=155, ...}, 0) = 0 <0.000073>
+17:09:09.996378 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc> <0.000085>
+17:09:09.998151 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000088>
+17:09:09.998835 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000065>
+17:09:09.999317 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000604>
+17:09:10.006398 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000478>
+17:09:10.008069 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3.13/lib-dynload> <0.000143>
+17:09:10.009464 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000072>
+17:09:10.010079 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000151>
+17:09:10.010888 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000111>
+17:09:10.011487 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/local/lib/python3.13/dist-packages> <0.000166>
+17:09:10.013163 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000149>
+17:09:10.014138 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000121>
+17:09:10.018361 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000153>
+17:09:10.019045 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3/dist-packages> <0.000169>
+17:09:10.021150 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000117>
+17:09:10.021929 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000074>
+17:09:10.022476 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000071>
+17:09:10.022999 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000172>
+17:09:10.025220 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000163>
+17:09:10.026021 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000188>
+17:09:10.026886 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000127>
+17:09:10.027681 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000098>
+17:09:10.028248 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</home/hlebushek/strace-lab> <0.000085>
+17:09:10.029229 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000079>
+17:09:10.029800 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/linecache.py", {st_mode=S_IFREG|0644, st_size=7284, ...}, 0) = 0 <0.000076>
+17:09:10.030542 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/linecache.py", {st_mode=S_IFREG|0644, st_size=7284, ...}, 0) = 0 <0.000090>
+17:09:10.031183 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/linecache.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/linecache.cpython-313.pyc> <0.000111>
+17:09:10.033649 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/shadow", O_RDONLY|O_CLOEXEC) = -1 EACCES (Отказано в доступе) <0.000118>
+17:09:10.034610 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000074>
+17:09:10.035091 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000072>
+17:09:10.035686 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000075>
+17:09:10.036211 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/traceback.py", {st_mode=S_IFREG|0644, st_size=66524, ...}, 0) = 0 <0.000071>
+17:09:10.037034 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/traceback.py", {st_mode=S_IFREG|0644, st_size=66524, ...}, 0) = 0 <0.000144>
+17:09:10.037891 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/traceback.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/traceback.cpython-313.pyc> <0.000191>
+17:09:10.042152 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000075>
+17:09:10.042574 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000060>
+17:09:10.042952 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000060>
+17:09:10.043233 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/collections/__init__.cpython-313-aarch64-linux-gnu.so", 0xffffd0febca0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000064>
+17:09:10.043611 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/collections/__init__.abi3.so", 0xffffd0febca0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000288>
+17:09:10.044172 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/collections/__init__.abi3-aarch64-linux-gnu.so", 0xffffd0febca0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000081>
+17:09:10.044603 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/collections/__init__.so", 0xffffd0febca0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000054>
+17:09:10.044905 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/collections/__init__.py", {st_mode=S_IFREG|0644, st_size=52500, ...}, 0) = 0 <0.000059>
+17:09:10.045444 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/collections/__init__.py", {st_mode=S_IFREG|0644, st_size=52500, ...}, 0) = 0 <0.000064>
+17:09:10.045846 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/collections/__pycache__/__init__.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/collections/__pycache__/__init__.cpython-313.pyc> <0.000095>
+17:09:10.051615 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000073>
+17:09:10.052037 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000059>
+17:09:10.052424 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000081>
+17:09:10.052997 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/keyword.py", {st_mode=S_IFREG|0644, st_size=1073, ...}, 0) = 0 <0.000065>
+17:09:10.053664 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/keyword.py", {st_mode=S_IFREG|0644, st_size=1073, ...}, 0) = 0 <0.000070>
+17:09:10.054131 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/keyword.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/keyword.cpython-313.pyc> <0.000105>
+17:09:10.055903 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000082>
+17:09:10.056398 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000060>
+17:09:10.056873 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000070>
+17:09:10.057219 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/operator.py", {st_mode=S_IFREG|0644, st_size=10980, ...}, 0) = 0 <0.000058>
+17:09:10.057821 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/operator.py", {st_mode=S_IFREG|0644, st_size=10980, ...}, 0) = 0 <0.000113>
+17:09:10.058547 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/operator.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/operator.cpython-313.pyc> <0.000084>
+17:09:10.062845 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000104>
+17:09:10.063435 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000082>
+17:09:10.064012 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000061>
+17:09:10.064396 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/reprlib.py", {st_mode=S_IFREG|0644, st_size=7192, ...}, 0) = 0 <0.000078>
+17:09:10.065001 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/reprlib.py", {st_mode=S_IFREG|0644, st_size=7192, ...}, 0) = 0 <0.000066>
+17:09:10.065416 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/reprlib.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/reprlib.cpython-313.pyc> <0.000087>
+17:09:10.071126 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000093>
+17:09:10.071679 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000102>
+17:09:10.072204 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000117>
+17:09:10.072911 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/textwrap.py", {st_mode=S_IFREG|0644, st_size=19939, ...}, 0) = 0 <0.000141>
+17:09:10.074011 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/textwrap.py", {st_mode=S_IFREG|0644, st_size=19939, ...}, 0) = 0 <0.000413>
+17:09:10.075160 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/textwrap.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/textwrap.cpython-313.pyc> <0.000126>
+17:09:10.077522 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000064>
+17:09:10.077921 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000074>
+17:09:10.078474 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000063>
+17:09:10.078806 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__init__.cpython-313-aarch64-linux-gnu.so", 0xffffd0feb9d0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000063>
+17:09:10.079164 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__init__.abi3.so", 0xffffd0feb9d0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000075>
+17:09:10.079556 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__init__.abi3-aarch64-linux-gnu.so", 0xffffd0feb9d0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000058>
+17:09:10.079855 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__init__.so", 0xffffd0feb9d0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000069>
+17:09:10.080264 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__init__.py", {st_mode=S_IFREG|0644, st_size=17876, ...}, 0) = 0 <0.000064>
+17:09:10.080810 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__init__.py", {st_mode=S_IFREG|0644, st_size=17876, ...}, 0) = 0 <0.000063>
+17:09:10.081165 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__pycache__/__init__.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/re/__pycache__/__init__.cpython-313.pyc> <0.000122>
+17:09:10.083440 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000068>
+17:09:10.083846 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000060>
+17:09:10.084302 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000077>
+17:09:10.084889 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/enum.py", {st_mode=S_IFREG|0644, st_size=85578, ...}, 0) = 0 <0.000209>
+17:09:10.086462 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/enum.py", {st_mode=S_IFREG|0644, st_size=85578, ...}, 0) = 0 <0.000098>
+17:09:10.087199 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/enum.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/enum.cpython-313.pyc> <0.000112>
+17:09:10.094743 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000078>
+17:09:10.095184 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000088>
+17:09:10.095658 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000070>
+17:09:10.096081 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/functools.py", {st_mode=S_IFREG|0644, st_size=39123, ...}, 0) = 0 <0.000061>
+17:09:10.096719 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/functools.py", {st_mode=S_IFREG|0644, st_size=39123, ...}, 0) = 0 <0.000100>
+17:09:10.097364 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/functools.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/functools.cpython-313.pyc> <0.000135>
+17:09:10.103462 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000075>
+17:09:10.103896 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000061>
+17:09:10.104296 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000067>
+17:09:10.104971 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/types.py", {st_mode=S_IFREG|0644, st_size=11207, ...}, 0) = 0 <0.000072>
+17:09:10.105642 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/types.py", {st_mode=S_IFREG|0644, st_size=11207, ...}, 0) = 0 <0.000066>
+17:09:10.106054 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/types.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/types.cpython-313.pyc> <0.000087>
+17:09:10.115780 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000086>
+17:09:10.116353 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000057>
+17:09:10.116865 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000068>
+17:09:10.117268 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3.13/re> <0.000082>
+17:09:10.118218 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/_compiler.py", {st_mode=S_IFREG|0644, st_size=26290, ...}, 0) = 0 <0.000064>
+17:09:10.118858 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/_compiler.py", {st_mode=S_IFREG|0644, st_size=26290, ...}, 0) = 0 <0.000086>
+17:09:10.119377 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__pycache__/_compiler.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/re/__pycache__/_compiler.cpython-313.pyc> <0.000088>
+17:09:10.123192 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000113>
+17:09:10.123999 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/_parser.py", {st_mode=S_IFREG|0644, st_size=41237, ...}, 0) = 0 <0.000069>
+17:09:10.124687 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/_parser.py", {st_mode=S_IFREG|0644, st_size=41237, ...}, 0) = 0 <0.000076>
+17:09:10.125302 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__pycache__/_parser.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/re/__pycache__/_parser.cpython-313.pyc> <0.000090>
+17:09:10.128344 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000131>
+17:09:10.128964 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/_constants.py", {st_mode=S_IFREG|0644, st_size=5939, ...}, 0) = 0 <0.000059>
+17:09:10.129484 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/_constants.py", {st_mode=S_IFREG|0644, st_size=5939, ...}, 0) = 0 <0.000065>
+17:09:10.129833 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__pycache__/_constants.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/re/__pycache__/_constants.cpython-313.pyc> <0.000140>
+17:09:10.134809 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000119>
+17:09:10.135461 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/_casefix.py", {st_mode=S_IFREG|0644, st_size=5444, ...}, 0) = 0 <0.000101>
+17:09:10.136054 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/_casefix.py", {st_mode=S_IFREG|0644, st_size=5444, ...}, 0) = 0 <0.000069>
+17:09:10.136501 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/re/__pycache__/_casefix.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/re/__pycache__/_casefix.cpython-313.pyc> <0.000105>
+17:09:10.140326 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000067>
+17:09:10.140765 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000064>
+17:09:10.141233 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000064>
+17:09:10.141593 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/copyreg.py", {st_mode=S_IFREG|0644, st_size=7614, ...}, 0) = 0 <0.000060>
+17:09:10.142068 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/copyreg.py", {st_mode=S_IFREG|0644, st_size=7614, ...}, 0) = 0 <0.000068>
+17:09:10.142493 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/copyreg.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/copyreg.cpython-313.pyc> <0.000104>
+17:09:10.149916 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000069>
+17:09:10.150380 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000059>
+17:09:10.150801 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000074>
+17:09:10.151203 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/warnings.py", {st_mode=S_IFREG|0644, st_size=26948, ...}, 0) = 0 <0.000077>
+17:09:10.151791 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/warnings.py", {st_mode=S_IFREG|0644, st_size=26948, ...}, 0) = 0 <0.000072>
+17:09:10.152347 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/warnings.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/warnings.cpython-313.pyc> <0.000115>
+17:09:10.156274 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000132>
+17:09:10.156894 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000064>
+17:09:10.157348 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000059>
+17:09:10.157654 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/contextlib.py", {st_mode=S_IFREG|0644, st_size=27801, ...}, 0) = 0 <0.000058>
+17:09:10.158333 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/contextlib.py", {st_mode=S_IFREG|0644, st_size=27801, ...}, 0) = 0 <0.000093>
+17:09:10.158899 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/contextlib.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/contextlib.cpython-313.pyc> <0.000090>
+17:09:10.166742 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000125>
+17:09:10.167387 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000094>
+17:09:10.168092 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000162>
+17:09:10.168850 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/_colorize.py", {st_mode=S_IFREG|0644, st_size=2848, ...}, 0) = 0 <0.000065>
+17:09:10.169424 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/_colorize.py", {st_mode=S_IFREG|0644, st_size=2848, ...}, 0) = 0 <0.000062>
+17:09:10.169811 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/_colorize.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/_colorize.cpython-313.pyc> <0.000156>
+17:09:10.171966 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000064>
+17:09:10.172351 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000179>
+17:09:10.172972 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000064>
+17:09:10.173439 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__future__.py", {st_mode=S_IFREG|0644, st_size=5218, ...}, 0) = 0 <0.000061>
+17:09:10.173970 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__future__.py", {st_mode=S_IFREG|0644, st_size=5218, ...}, 0) = 0 <0.000061>
+17:09:10.174321 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/__future__.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/__future__.cpython-313.pyc> <0.000087>
+17:09:10.179827 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000068>
+17:09:10.180300 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000060>
+17:09:10.180738 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000060>
+17:09:10.181077 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/tokenize.py", {st_mode=S_IFREG|0644, st_size=21568, ...}, 0) = 0 <0.000075>
+17:09:10.181670 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/tokenize.py", {st_mode=S_IFREG|0644, st_size=21568, ...}, 0) = 0 <0.000069>
+17:09:10.182116 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/tokenize.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/tokenize.cpython-313.pyc> <0.000095>
+17:09:10.186811 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000267>
+17:09:10.187533 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000156>
+17:09:10.188524 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000152>
+17:09:10.189541 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/token.py", {st_mode=S_IFREG|0644, st_size=2489, ...}, 0) = 0 <0.000124>
+17:09:10.190661 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/token.py", {st_mode=S_IFREG|0644, st_size=2489, ...}, 0) = 0 <0.000137>
+17:09:10.191913 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/token.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/token.cpython-313.pyc> <0.000117>
+17:09:10.201841 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000120>
+17:09:10.202429 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000119>
+17:09:10.203150 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000100>
+17:09:10.203893 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/ast.py", {st_mode=S_IFREG|0644, st_size=65339, ...}, 0) = 0 <0.000148>
+17:09:10.204985 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/ast.py", {st_mode=S_IFREG|0644, st_size=65339, ...}, 0) = 0 <0.000109>
+17:09:10.205609 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/ast.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/ast.cpython-313.pyc> <0.000294>
+17:09:10.298523 +++ exited with 1 +++

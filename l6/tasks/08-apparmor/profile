@@ -1,0 +1,4 @@
+profile strace-lab-08 /usr/bin/python3 {
+  file,
+  deny /etc/shadow r,
+}

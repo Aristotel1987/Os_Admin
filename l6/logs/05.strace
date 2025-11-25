@@ -1,0 +1,356 @@
+5832  17:09:08.132002 execve("/usr/bin/python3", ["python3", "tasks/05-file-lock/lock.py"], 0xffffd5824ea8 /* 31 vars */) = 0 <0.001153>
+5832  17:09:08.133868 brk(NULL)         = 0xb619000 <0.000048>
+5832  17:09:08.134182 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa4c67000 <0.000069>
+5832  17:09:08.134440 faccessat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/ld.so.preload", R_OK) = -1 ENOENT (Нет такого файла или каталога) <0.000084>
+5832  17:09:08.135511 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache> <0.000074>
+5832  17:09:08.135878 fstat(3</etc/ld.so.cache>, {st_mode=S_IFREG|0644, st_size=50787, ...}) = 0 <0.000048>
+5832  17:09:08.136244 mmap(NULL, 50787, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0xffffa4c5a000 <0.000104>
+5832  17:09:08.136538 close(3</etc/ld.so.cache>) = 0 <0.000048>
+5832  17:09:08.136835 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libm.so.6> <0.000075>
+5832  17:09:08.137113 read(3</usr/lib/aarch64-linux-gnu/libm.so.6>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0X\1\t\0\0\0\0\0\0\0\0\0@\08\0\n\0@\0\34\0\33\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0p\327\10\0\0\0\0\0p\327\10\0\0\0\0\0\0\0\1\0\0\0\0\0\1\0\0\0\6\0\0\0\300\374\10\0\0\0\0\0\300\374\t\0\0\0\0\0\300\374\t\0\0\0\0\0L\3\0\0\0\0\0\0X\3\0\0\0\0\0\0\0\0\1\0\0\0\0\0\2\0\0\0\6\0\0\0\320\374\10\0\0\0\0\0\320\374\t\0\0\0\0\0"..., 832) = 832 <0.000054>
+5832  17:09:08.137350 fstat(3</usr/lib/aarch64-linux-gnu/libm.so.6>, {st_mode=S_IFREG|0644, st_size=591960, ...}) = 0 <0.000049>
+5832  17:09:08.137564 mmap(NULL, 720920, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffffa4b7d000 <0.000100>
+5832  17:09:08.137793 mmap(0xffffa4b80000, 655384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libm.so.6>, 0) = 0xffffa4b80000 <0.000136>
+5832  17:09:08.138089 munmap(0xffffa4b7d000, 12288) = 0 <0.000061>
+5832  17:09:08.138271 munmap(0xffffa4c21000, 49176) = 0 <0.000058>
+5832  17:09:08.138514 mprotect(0xffffa4c0e000, 69632, PROT_NONE) = 0 <0.000110>
+5832  17:09:08.138763 mmap(0xffffa4c1f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libm.so.6>, 0x8f000) = 0xffffa4c1f000 <0.000142>
+5832  17:09:08.139278 close(3</usr/lib/aarch64-linux-gnu/libm.so.6>) = 0 <0.000055>
+5832  17:09:08.139591 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libz.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libz.so.1.3.1> <0.000082>
+5832  17:09:08.139885 read(3</usr/lib/aarch64-linux-gnu/libz.so.1.3.1>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\340\2\2\0\0\0\0\0\0\0\0\0@\08\0\t\0@\0\34\0\33\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\10\271\1\0\0\0\0\0\10\271\1\0\0\0\0\0\0\0\1\0\0\0\0\0\1\0\0\0\6\0\0\0@\374\1\0\0\0\0\0@\374\2\0\0\0\0\0@\374\2\0\0\0\0\0X\5\0\0\0\0\0\0`\5\0\0\0\0\0\0\0\0\1\0\0\0\0\0\2\0\0\0\6\0\0\0\240\375\1\0\0\0\0\0\240\375\2\0\0\0\0\0"..., 832) = 832 <0.000079>
+5832  17:09:08.140219 fstat(3</usr/lib/aarch64-linux-gnu/libz.so.1.3.1>, {st_mode=S_IFREG|0644, st_size=133600, ...}) = 0 <0.000048>
+5832  17:09:08.140468 mmap(NULL, 262560, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffffa4b3f000 <0.000095>
+5832  17:09:08.140693 mmap(0xffffa4b40000, 197024, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libz.so.1.3.1>, 0) = 0xffffa4b40000 <0.000137>
+5832  17:09:08.140975 munmap(0xffffa4b3f000, 4096) = 0 <0.000061>
+5832  17:09:08.141151 munmap(0xffffa4b71000, 57760) = 0 <0.000059>
+5832  17:09:08.141326 mprotect(0xffffa4b5c000, 77824, PROT_NONE) = 0 <0.000095>
+5832  17:09:08.141540 mmap(0xffffa4b6f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libz.so.1.3.1>, 0x1f000) = 0xffffa4b6f000 <0.000080>
+5832  17:09:08.141852 close(3</usr/lib/aarch64-linux-gnu/libz.so.1.3.1>) = 0 <0.000048>
+5832  17:09:08.142114 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libexpat.so.1", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libexpat.so.1.10.2> <0.000084>
+5832  17:09:08.142400 read(3</usr/lib/aarch64-linux-gnu/libexpat.so.1.10.2>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\310\1\3\0\0\0\0\0\0\0\0\0@\08\0\t\0@\0\33\0\32\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0$X\2\0\0\0\0\0$X\2\0\0\0\0\0\0\0\1\0\0\0\0\0\1\0\0\0\6\0\0\0000\342\2\0\0\0\0\0000\342\3\0\0\0\0\0000\342\3\0\0\0\0\0`\36\0\0\0\0\0\0h\36\0\0\0\0\0\0\0\0\1\0\0\0\0\0\2\0\0\0\6\0\0\0p\375\2\0\0\0\0\0p\375\3\0\0\0\0\0"..., 832) = 832 <0.000053>
+5832  17:09:08.142613 fstat(3</usr/lib/aarch64-linux-gnu/libexpat.so.1.10.2>, {st_mode=S_IFREG|0644, st_size=198792, ...}) = 0 <0.000047>
+5832  17:09:08.142834 mmap(NULL, 327832, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffffa4aef000 <0.000083>
+5832  17:09:08.143043 mmap(0xffffa4af0000, 262296, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libexpat.so.1.10.2>, 0) = 0xffffa4af0000 <0.000123>
+5832  17:09:08.143444 munmap(0xffffa4aef000, 4096) = 0 <0.000069>
+5832  17:09:08.143650 munmap(0xffffa4b31000, 57496) = 0 <0.000062>
+5832  17:09:08.143831 mprotect(0xffffa4b16000, 98304, PROT_NONE) = 0 <0.000100>
+5832  17:09:08.144051 mmap(0xffffa4b2e000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libexpat.so.1.10.2>, 0x2e000) = 0xffffa4b2e000 <0.000084>
+5832  17:09:08.144380 close(3</usr/lib/aarch64-linux-gnu/libexpat.so.1.10.2>) = 0 <0.000047>
+5832  17:09:08.144592 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libc.so.6> <0.000078>
+5832  17:09:08.144865 read(3</usr/lib/aarch64-linux-gnu/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\300$\2\0\0\0\0\0@\0\0\0\0\0\0\0H\"\33\0\0\0\0\0\0\0\0\0@\08\0\r\0@\0=\0<\0\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\330\2\0\0\0\0\0\0\330\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\10\323\31\0\0\0\0\0\10\323\31\0\0\0\0\0\10\323\31\0\0\0\0\0\33\0\0\0\0\0\0\0\33\0\0\0\0\0\0\0\10\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832 <0.000055>
+5832  17:09:08.145080 fstat(3</usr/lib/aarch64-linux-gnu/libc.so.6>, {st_mode=S_IFREG|0755, st_size=1782152, ...}) = 0 <0.000046>
+5832  17:09:08.145281 mmap(NULL, 1892400, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffffa4921000 <0.000073>
+5832  17:09:08.145474 mmap(0xffffa4930000, 1826864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libc.so.6>, 0) = 0xffffa4930000 <0.000151>
+5832  17:09:08.145770 munmap(0xffffa4921000, 61440) = 0 <0.000062>
+5832  17:09:08.145954 munmap(0xffffa4aef000, 48) = 0 <0.000056>
+5832  17:09:08.146124 mprotect(0xffffa4ace000, 61440, PROT_NONE) = 0 <0.000150>
+5832  17:09:08.146413 mmap(0xffffa4add000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libc.so.6>, 0x1ad000) = 0xffffa4add000 <0.000121>
+5832  17:09:08.146772 mmap(0xffffa4ae2000, 49200, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffa4ae2000 <0.000102>
+5832  17:09:08.147060 close(3</usr/lib/aarch64-linux-gnu/libc.so.6>) = 0 <0.000047>
+5832  17:09:08.147351 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa4c58000 <0.000074>
+5832  17:09:08.147583 set_tid_address(0xffffa4c58830) = 5832 <0.000044>
+5832  17:09:08.147745 set_robust_list(0xffffa4c58840, 24) = 0 <0.000043>
+5832  17:09:08.147901 rseq(0xffffa4c58f40, 0x20, 0, 0xd428bc00) = 0 <0.000042>
+5832  17:09:08.148247 mprotect(0xffffa4add000, 12288, PROT_READ) = 0 <0.000087>
+5832  17:09:08.148496 mprotect(0xffffa4b2e000, 8192, PROT_READ) = 0 <0.000080>
+5832  17:09:08.148706 mprotect(0xffffa4b6f000, 4096, PROT_READ) = 0 <0.000074>
+5832  17:09:08.148928 mprotect(0xffffa4c1f000, 4096, PROT_READ) = 0 <0.000099>
+5832  17:09:08.149256 mprotect(0x9df000, 4096, PROT_READ) = 0 <0.000077>
+5832  17:09:08.149487 mprotect(0xffffa4c6c000, 8192, PROT_READ) = 0 <0.000089>
+5832  17:09:08.149755 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000050>
+5832  17:09:08.150045 munmap(0xffffa4c5a000, 50787) = 0 <0.000140>
+5832  17:09:08.150427 getrandom("\xbf\xd0\xb9\xf1\x40\x66\x28\x04\x10\x51\x2e\xe7\x65\x8e\x56\x2a\x10\xec\xd1\x20\x93\xd7\x24\x05\x0a\xd2\x56\x9a\xbf\x30\x3f\x11", 32, GRND_NONBLOCK) = 32 <0.000050>
+5832  17:09:08.150732 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/proc/sys/vm/overcommit_memory", O_RDONLY) = 3</proc/sys/vm/overcommit_memory> <0.000088>
+5832  17:09:08.151031 read(3</proc/sys/vm/overcommit_memory>, "0\n", 32) = 2 <0.000063>
+5832  17:09:08.151249 close(3</proc/sys/vm/overcommit_memory>) = 0 <0.000053>
+5832  17:09:08.151592 getrandom("\x56\x46\x08\x77\xbd\xeb\x14\xa7", 8, GRND_NONBLOCK) = 8 <0.000050>
+5832  17:09:08.151785 brk(NULL)         = 0xb619000 <0.000045>
+5832  17:09:08.151945 brk(0xb63a000)    = 0xb63a000 <0.000066>
+5832  17:09:08.152184 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3</usr/lib/locale/locale-archive> <0.000073>
+5832  17:09:08.152442 fstat(3</usr/lib/locale/locale-archive>, {st_mode=S_IFREG|0644, st_size=3067632, ...}) = 0 <0.000069>
+5832  17:09:08.152679 mmap(NULL, 3067632, PROT_READ, MAP_PRIVATE, 3</usr/lib/locale/locale-archive>, 0) = 0xffffa4643000 <0.000098>
+5832  17:09:08.152965 close(3</usr/lib/locale/locale-archive>) = 0 <0.000046>
+5832  17:09:08.153427 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache> <0.000088>
+5832  17:09:08.153767 fstat(3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache>, {st_mode=S_IFREG|0644, st_size=27028, ...}) = 0 <0.000047>
+5832  17:09:08.153986 mmap(NULL, 27028, PROT_READ, MAP_SHARED, 3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache>, 0) = 0xffffa4c60000 <0.000090>
+5832  17:09:08.154225 close(3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache>) = 0 <0.000045>
+5832  17:09:08.154433 futex(0xffffa4ae165c, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000065>
+5832  17:09:08.154855 getcwd("/home/hlebushek/strace-lab", 4096) = 27 <0.000058>
+5832  17:09:08.155272 getrandom("\x2d\xdb\x66\xe1\xcf\x8a\x66\x2c\xda\x10\x50\x7b\xf7\x47\xda\x6d\x16\x6e\x06\x51\xdf\x91\xd3\x2e", 24, GRND_NONBLOCK) = 24 <0.000051>
+5832  17:09:08.155878 gettid()          = 5832 <0.000053>
+5832  17:09:08.157002 mmap(NULL, 1048576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa4543000 <0.000113>
+5832  17:09:08.157377 mmap(NULL, 266240, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa4502000 <0.000065>
+5832  17:09:08.157630 mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa44e1000 <0.000060>
+5832  17:09:08.161901 brk(0xb65c000)    = 0xb65c000 <0.000103>
+5832  17:09:08.166125 mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa4c5c000 <0.000194>
+5832  17:09:08.171750 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/bin/python3", 0xffffcf3c9c90, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000081>
+5832  17:09:08.172219 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3", {st_mode=S_IFREG|0755, st_size=6673720, ...}, 0) = 0 <0.000060>
+5832  17:09:08.172533 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/pyvenv.cfg", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000076>
+5832  17:09:08.172836 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/pyvenv.cfg", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000063>
+5832  17:09:08.173113 readlinkat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3", "python3.13", 4096) = 10 <0.000054>
+5832  17:09:08.173436 readlinkat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3.13", 0xffffcf3c4cc0, 4096) = -1 EINVAL (Недопустимый аргумент) <0.000060>
+5832  17:09:08.173842 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3._pth", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000072>
+5832  17:09:08.174145 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/python3.13._pth", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000063>
+5832  17:09:08.174412 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/pybuilddir.txt", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000083>
+5832  17:09:08.174694 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/Modules/Setup.local", 0xffffcf3c9c90, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000055>
+5832  17:09:08.174980 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/lib/python313.zip", 0xffffcf3c99c0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000052>
+5832  17:09:08.175240 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python313.zip", 0xffffcf3c9a20, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000083>
+5832  17:09:08.175658 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/lib/python3.13/os.py", 0xffffcf3c9a20, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000060>
+5832  17:09:08.175993 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/lib/python3.13/os.pyc", 0xffffcf3c9a20, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000054>
+5832  17:09:08.176249 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/os.py", {st_mode=S_IFREG|0644, st_size=41635, ...}, 0) = 0 <0.000060>
+5832  17:09:08.176561 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/lib/python3.13/lib-dynload", 0xffffcf3c9a20, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000060>
+5832  17:09:08.176936 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000076>
+5832  17:09:08.177281 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000055>
+5832  17:09:08.179295 brk(0xb67d000)    = 0xb67d000 <0.000189>
+5832  17:09:08.183878 mmap(NULL, 1048576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa43e1000 <0.000164>
+5832  17:09:08.187616 brk(0xb69e000)    = 0xb69e000 <0.000102>
+5832  17:09:08.188226 brk(0xb69d000)    = 0xb69d000 <0.000122>
+5832  17:09:08.189089 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3</usr/share/zoneinfo/Europe/Moscow> <0.000097>
+5832  17:09:08.189507 fstat(3</usr/share/zoneinfo/Europe/Moscow>, {st_mode=S_IFREG|0644, st_size=1535, ...}) = 0 <0.000104>
+5832  17:09:08.189833 fstat(3</usr/share/zoneinfo/Europe/Moscow>, {st_mode=S_IFREG|0644, st_size=1535, ...}) = 0 <0.000095>
+5832  17:09:08.190153 read(3</usr/share/zoneinfo/Europe/Moscow>, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\21\0\0\0\21\0\0\0\0\0\0\0N\0\0\0\21\0\0\0&\200\0\0\0\233_\36\307\235>\362y\236*\356\371\236\3679i\237\204W\371\240\330l\351\241\09\200\241<\246@\244\20m\300\244=2\260\245\25h\260\245=\3\300\247\36EP\265\244\31`\25'\247\320\26\30\334@\27\10\333P\27\372\17\300\30\352\16\320\31\333C@\32\314\223\320\33\274\240\360\34\254\221\360\35\234\202\360\36\214s\360\37|d\360 lU\360!\\F\360\"L7\360#<(\360$,\31\360%\34\n\360&\v\373\360'\5'p'\365\30p(\345\27\200)x\277\200)\324\372p"..., 4096) = 1535 <0.000058>
+5832  17:09:08.190397 lseek(3</usr/share/zoneinfo/Europe/Moscow>, -927, SEEK_CUR) = 608 <0.000049>
+5832  17:09:08.190690 read(3</usr/share/zoneinfo/Europe/Moscow>, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\21\0\0\0\21\0\0\0\0\0\0\0N\0\0\0\21\0\0\0&\377\377\377\377V\266\300\307\377\377\377\377\233_\36\307\377\377\377\377\235>\362y\377\377\377\377\236*\356\371\377\377\377\377\236\3679i\377\377\377\377\237\204W\371\377\377\377\377\240\330l\351\377\377\377\377\241\09\200\377\377\377\377\241<\246@\377\377\377\377\244\20m\300\377\377\377\377\244=2\260\377\377\377\377\245\25h\260\377\377\377\377\245=\3\300\377\377\377\377\247\36EP\377\377\377\377\265\244\31`\0\0\0\0\25'\247\320\0\0\0\0\26\30\334@\0\0\0\0\27\10\333P\0\0\0\0\27\372\17\300\0\0\0\0"..., 4096) = 927 <0.000092>
+5832  17:09:08.191068 close(3</usr/share/zoneinfo/Europe/Moscow>) = 0 <0.000095>
+5832  17:09:08.192292 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python313.zip", 0xffffcf3c9620, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000074>
+5832  17:09:08.192780 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000056>
+5832  17:09:08.193199 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python313.zip", 0xffffcf3c9940, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000059>
+5832  17:09:08.193681 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000061>
+5832  17:09:08.194043 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000055>
+5832  17:09:08.194415 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000057>
+5832  17:09:08.194705 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3.13> <0.000082>
+5832  17:09:08.194978 fstat(3</usr/lib/python3.13>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0 <0.000047>
+5832  17:09:08.195244 getdents64(3</usr/lib/python3.13>, 0xb67e240 /* 194 entries */, 32768) = 6536 <0.000333>
+5832  17:09:08.196099 getdents64(3</usr/lib/python3.13>, 0xb67e240 /* 0 entries */, 32768) = 0 <0.000075>
+5832  17:09:08.196362 close(3</usr/lib/python3.13>) = 0 <0.000154>
+5832  17:09:08.196976 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.cpython-313-aarch64-linux-gnu.so", 0xffffcf3c9940, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000065>
+5832  17:09:08.197425 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.abi3.so", 0xffffcf3c9940, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000056>
+5832  17:09:08.197734 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.abi3-aarch64-linux-gnu.so", 0xffffcf3c9940, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000056>
+5832  17:09:08.198001 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.so", 0xffffcf3c9940, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000052>
+5832  17:09:08.198251 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.py", {st_mode=S_IFREG|0644, st_size=5884, ...}, 0) = 0 <0.000057>
+5832  17:09:08.198871 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__init__.py", {st_mode=S_IFREG|0644, st_size=5884, ...}, 0) = 0 <0.000070>
+5832  17:09:08.199287 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc> <0.000086>
+5832  17:09:08.199596 fcntl(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>, F_GETFD) = 0x1 (flags FD_CLOEXEC) <0.000066>
+5832  17:09:08.199914 fstat(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>, {st_mode=S_IFREG|0644, st_size=6017, ...}) = 0 <0.000063>
+5832  17:09:08.200326 ioctl(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>, TCGETS, 0xffffcf3c9530) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000108>
+5832  17:09:08.200783 lseek(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>, 0, SEEK_CUR) = 0 <0.000050>
+5832  17:09:08.201109 lseek(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>, 0, SEEK_CUR) = 0 <0.000046>
+5832  17:09:08.201299 fstat(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>, {st_mode=S_IFREG|0644, st_size=6017, ...}) = 0 <0.000046>
+5832  17:09:08.201537 read(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>, "\363\r\r\n\0\0\0\0\32F\\h\374\26\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\0\0\0\0\363\336\0\0\0\225\0S\0r\0S\1S\2K\1r\1S\1S\2K\2r\2S\3S\4K\3J\4r\4 \0000\0r\5S\5r\6S\6/\1r\7\\\4R\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0r\10\30\0\"\0S\7\32\0S\10\\\t\\\n5\4\0\0\0\0\0\0r\vS\t\32\0r\fS\n\32\0r\r\\\1R\34\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\"\0\\\r5\1\0\0\0\0\0\0 \0\\\2R\36\0\0\0\0\0\0\0\0\0\0"..., 6018) = 6017 <0.000072>
+5832  17:09:08.201774 read(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>, "", 1) = 0 <0.000049>
+5832  17:09:08.202003 close(3</usr/lib/python3.13/encodings/__pycache__/__init__.cpython-313.pyc>) = 0 <0.000062>
+5832  17:09:08.207454 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000079>
+5832  17:09:08.207995 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000057>
+5832  17:09:08.208414 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000059>
+5832  17:09:08.208703 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3.13/encodings> <0.000080>
+5832  17:09:08.208983 fstat(3</usr/lib/python3.13/encodings>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0 <0.000051>
+5832  17:09:08.209221 getdents64(3</usr/lib/python3.13/encodings>, 0xb689af0 /* 125 entries */, 32768) = 4224 <0.000253>
+5832  17:09:08.209861 getdents64(3</usr/lib/python3.13/encodings>, 0xb689af0 /* 0 entries */, 32768) = 0 <0.000093>
+5832  17:09:08.210221 close(3</usr/lib/python3.13/encodings>) = 0 <0.000132>
+5832  17:09:08.210754 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/aliases.py", {st_mode=S_IFREG|0644, st_size=15713, ...}, 0) = 0 <0.000067>
+5832  17:09:08.211478 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/aliases.py", {st_mode=S_IFREG|0644, st_size=15713, ...}, 0) = 0 <0.000089>
+5832  17:09:08.212074 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc> <0.000131>
+5832  17:09:08.212462 fstat(3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc>, {st_mode=S_IFREG|0644, st_size=12385, ...}) = 0 <0.000048>
+5832  17:09:08.212703 ioctl(3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc>, TCGETS, 0xffffcf3c8960) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000048>
+5832  17:09:08.212979 lseek(3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc>, 0, SEEK_CUR) = 0 <0.000048>
+5832  17:09:08.213326 lseek(3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc>, 0, SEEK_CUR) = 0 <0.000060>
+5832  17:09:08.213610 fstat(3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc>, {st_mode=S_IFREG|0644, st_size=12385, ...}) = 0 <0.000052>
+5832  17:09:08.213905 read(3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc>, "\363\r\r\n\0\0\0\0\32F\\ha=\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\6\0\0\0\0\0\0\0\363\374\t\0\0\225\0S\0r\0000\0S\1S\2_\1S\3S\2_\1S\4S\2_\1S\5S\2_\1S\6S\2_\1S\7S\2_\1S\10S\2_\1S\tS\2_\1S\nS\2_\1S\vS\2_\1S\fS\2_\1S\rS\2_\1S\16S\17_\1S\20S\17_\1S\21S\22_\1S\23S\22_\1S\24S\25_\0010\0S\26S\25_\1S\27S\30_\1S\31S\32_\1S\33S\32_\1S\34S\32_\1S\35S\32_\1S\36S\32_\1S\37S\32"..., 12386) = 12385 <0.000108>
+5832  17:09:08.214252 read(3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc>, "", 1) = 0 <0.000048>
+5832  17:09:08.214509 close(3</usr/lib/python3.13/encodings/__pycache__/aliases.cpython-313.pyc>) = 0 <0.000060>
+5832  17:09:08.216442 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000085>
+5832  17:09:08.217132 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/utf_8.py", {st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0 <0.000077>
+5832  17:09:08.217747 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/utf_8.py", {st_mode=S_IFREG|0644, st_size=1005, ...}, 0) = 0 <0.000063>
+5832  17:09:08.218175 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc> <0.000084>
+5832  17:09:08.218469 fstat(3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc>, {st_mode=S_IFREG|0644, st_size=2284, ...}) = 0 <0.000048>
+5832  17:09:08.218685 ioctl(3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc>, TCGETS, 0xffffcf3c94d0) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000048>
+5832  17:09:08.218917 lseek(3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc>, 0, SEEK_CUR) = 0 <0.000046>
+5832  17:09:08.219126 lseek(3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc>, 0, SEEK_CUR) = 0 <0.000045>
+5832  17:09:08.219307 fstat(3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc>, {st_mode=S_IFREG|0644, st_size=2284, ...}) = 0 <0.000046>
+5832  17:09:08.219514 read(3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc>, "\363\r\r\n\0\0\0\0\32F\\h\355\3\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\5\0\0\0\0\0\0\0\363\340\0\0\0\225\0S\0r\0S\1S\2K\1r\1\\\1R\4\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0r\3S\rS\3\32\0j\1r\4\30\0\"\0S\4\32\0S\5\\\1R\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0005\3\0\0\0\0\0\0r\5\30\0\"\0S\6\32\0S\7\\\1R\f\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0005\3\0\0\0\0\0\0r\7\30\0\"\0S\10\32\0S\t\\\1R\20\0\0\0\0\0\0\0\0\0\0\0\0"..., 2285) = 2284 <0.000055>
+5832  17:09:08.219726 read(3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc>, "", 1) = 0 <0.000046>
+5832  17:09:08.219992 close(3</usr/lib/python3.13/encodings/__pycache__/utf_8.cpython-313.pyc>) = 0 <0.000174>
+5832  17:09:08.221365 rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_ONSTACK}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000076>
+5832  17:09:08.221771 rt_sigaction(SIGXFSZ, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_ONSTACK}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.222742 rt_sigaction(SIGHUP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000056>
+5832  17:09:08.223025 rt_sigaction(SIGINT, NULL, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.223205 rt_sigaction(SIGQUIT, NULL, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0 <0.000102>
+5832  17:09:08.223449 rt_sigaction(SIGILL, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.223639 rt_sigaction(SIGTRAP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.223814 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0 <0.000045>
+5832  17:09:08.224014 rt_sigaction(SIGABRT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000046>
+5832  17:09:08.224192 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000043>
+5832  17:09:08.224361 rt_sigaction(SIGBUS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.224530 rt_sigaction(SIGFPE, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.224703 rt_sigaction(SIGKILL, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.224874 rt_sigaction(SIGUSR1, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.225182 rt_sigaction(SIGSEGV, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000046>
+5832  17:09:08.225377 rt_sigaction(SIGUSR2, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000047>
+5832  17:09:08.225556 rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_ONSTACK}, 8) = 0 <0.000044>
+5832  17:09:08.225726 rt_sigaction(SIGALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.225896 rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.226065 rt_sigaction(SIGSTKFLT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.226238 rt_sigaction(SIGCHLD, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.226410 rt_sigaction(SIGCONT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.226581 rt_sigaction(SIGSTOP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000050>
+5832  17:09:08.226796 rt_sigaction(SIGTSTP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.226971 rt_sigaction(SIGTTIN, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000056>
+5832  17:09:08.227161 rt_sigaction(SIGTTOU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000045>
+5832  17:09:08.227337 rt_sigaction(SIGURG, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.227510 rt_sigaction(SIGXCPU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000045>
+5832  17:09:08.227684 rt_sigaction(SIGXFSZ, NULL, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_ONSTACK}, 8) = 0 <0.000043>
+5832  17:09:08.227857 rt_sigaction(SIGVTALRM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000053>
+5832  17:09:08.228042 rt_sigaction(SIGPROF, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000047>
+5832  17:09:08.228219 rt_sigaction(SIGWINCH, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000046>
+5832  17:09:08.228394 rt_sigaction(SIGIO, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000045>
+5832  17:09:08.228571 rt_sigaction(SIGPWR, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000045>
+5832  17:09:08.228749 rt_sigaction(SIGSYS, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000041>
+5832  17:09:08.228903 rt_sigaction(SIGRT_2, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.229077 rt_sigaction(SIGRT_3, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000045>
+5832  17:09:08.229258 rt_sigaction(SIGRT_4, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000051>
+5832  17:09:08.229445 rt_sigaction(SIGRT_5, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000049>
+5832  17:09:08.229631 rt_sigaction(SIGRT_6, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000048>
+5832  17:09:08.229816 rt_sigaction(SIGRT_7, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000051>
+5832  17:09:08.230030 rt_sigaction(SIGRT_8, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000047>
+5832  17:09:08.230242 rt_sigaction(SIGRT_9, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000050>
+5832  17:09:08.230435 rt_sigaction(SIGRT_10, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.230613 rt_sigaction(SIGRT_11, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.230797 rt_sigaction(SIGRT_12, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000045>
+5832  17:09:08.230980 rt_sigaction(SIGRT_13, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.231153 rt_sigaction(SIGRT_14, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.231328 rt_sigaction(SIGRT_15, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.231501 rt_sigaction(SIGRT_16, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.231760 rt_sigaction(SIGRT_17, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.231934 rt_sigaction(SIGRT_18, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000045>
+5832  17:09:08.232108 rt_sigaction(SIGRT_19, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.232280 rt_sigaction(SIGRT_20, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.232455 rt_sigaction(SIGRT_21, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.232629 rt_sigaction(SIGRT_22, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.232800 rt_sigaction(SIGRT_23, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.232972 rt_sigaction(SIGRT_24, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.233153 rt_sigaction(SIGRT_25, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.233384 rt_sigaction(SIGRT_26, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000044>
+5832  17:09:08.233567 rt_sigaction(SIGRT_27, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.233742 rt_sigaction(SIGRT_28, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000045>
+5832  17:09:08.233917 rt_sigaction(SIGRT_29, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.234087 rt_sigaction(SIGRT_30, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000046>
+5832  17:09:08.234261 rt_sigaction(SIGRT_31, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.234436 rt_sigaction(SIGRT_32, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000043>
+5832  17:09:08.234781 fstat(0</dev/null>, {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}) = 0 <0.000052>
+5832  17:09:08.237678 fcntl(0</dev/null>, F_GETFD) = 0 <0.000093>
+5832  17:09:08.238113 fstat(0</dev/null>, {st_mode=S_IFCHR|0666, st_rdev=makedev(0x1, 0x3), ...}) = 0 <0.000051>
+5832  17:09:08.238395 ioctl(0</dev/null>, TCGETS, 0xffffcf3c9b50) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000048>
+5832  17:09:08.238679 lseek(0</dev/null>, 0, SEEK_CUR) = 0 <0.000046>
+5832  17:09:08.238888 ioctl(0</dev/null>, TCGETS, 0xffffcf3c9e80) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000046>
+5832  17:09:08.239185 fcntl(1</dev/pts/0>, F_GETFD) = 0 <0.000048>
+5832  17:09:08.239422 fstat(1</dev/pts/0>, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0 <0.000050>
+5832  17:09:08.239646 ioctl(1</dev/pts/0>, TCGETS, {c_iflag=ICRNL|IXON|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0 <0.000058>
+5832  17:09:08.239893 lseek(1</dev/pts/0>, 0, SEEK_CUR) = -1 ESPIPE (Недопустимая операция смещения) <0.000069>
+5832  17:09:08.240234 ioctl(1</dev/pts/0>, TCGETS, {c_iflag=ICRNL|IXON|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0 <0.000067>
+5832  17:09:08.240641 fcntl(2</dev/pts/0>, F_GETFD) = 0 <0.000062>
+5832  17:09:08.240920 fstat(2</dev/pts/0>, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0 <0.000047>
+5832  17:09:08.241144 ioctl(2</dev/pts/0>, TCGETS, {c_iflag=ICRNL|IXON|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0 <0.000051>
+5832  17:09:08.241388 lseek(2</dev/pts/0>, 0, SEEK_CUR) = -1 ESPIPE (Недопустимая операция смещения) <0.000047>
+5832  17:09:08.241618 ioctl(2</dev/pts/0>, TCGETS, {c_iflag=ICRNL|IXON|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0 <0.000049>
+5832  17:09:08.242996 brk(0xb6d5000)    = 0xb6d5000 <0.000099>
+5832  17:09:08.257629 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/pyvenv.cfg", 0xffffcf3c93a0, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000072>
+5832  17:09:08.258143 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/pyvenv.cfg", 0xffffcf3c9400, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000054>
+5832  17:09:08.258473 geteuid()         = 1000 <0.000046>
+5832  17:09:08.258655 getuid()          = 1000 <0.000045>
+5832  17:09:08.258827 getegid()         = 1000 <0.000044>
+5832  17:09:08.258993 getgid()          = 1000 <0.000043>
+5832  17:09:08.259353 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/.local/lib/python3.13/site-packages", 0xffffcf3c9610, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000064>
+5832  17:09:08.259742 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000066>
+5832  17:09:08.260281 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/local/lib/python3.13/dist-packages> <0.000174>
+5832  17:09:08.260814 fstat(3</usr/local/lib/python3.13/dist-packages>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0 <0.000048>
+5832  17:09:08.261109 getdents64(3</usr/local/lib/python3.13/dist-packages>, 0xb6c4d60 /* 2 entries */, 32768) = 48 <0.000086>
+5832  17:09:08.261373 getdents64(3</usr/local/lib/python3.13/dist-packages>, 0xb6c4d60 /* 0 entries */, 32768) = 0 <0.000049>
+5832  17:09:08.261571 close(3</usr/local/lib/python3.13/dist-packages>) = 0 <0.000058>
+5832  17:09:08.261857 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000072>
+5832  17:09:08.262219 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3/dist-packages> <0.000077>
+5832  17:09:08.262485 fstat(3</usr/lib/python3/dist-packages>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0 <0.000046>
+5832  17:09:08.262690 getdents64(3</usr/lib/python3/dist-packages>, 0xb6c4d60 /* 85 entries */, 32768) = 3400 <0.000204>
+5832  17:09:08.263154 getdents64(3</usr/lib/python3/dist-packages>, 0xb6c4d60 /* 0 entries */, 32768) = 0 <0.000094>
+5832  17:09:08.263471 close(3</usr/lib/python3/dist-packages>) = 0 <0.000137>
+5832  17:09:08.263902 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/dist-packages", 0xffffcf3c9670, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000115>
+5832  17:09:08.264814 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000112>
+5832  17:09:08.265355 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/sitecustomize.py", {st_mode=S_IFREG|0644, st_size=155, ...}, 0) = 0 <0.000064>
+5832  17:09:08.265858 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/sitecustomize.py", {st_mode=S_IFREG|0644, st_size=155, ...}, 0) = 0 <0.000065>
+5832  17:09:08.266191 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc", O_RDONLY|O_CLOEXEC) = 3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc> <0.000083>
+5832  17:09:08.266486 fstat(3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc>, {st_mode=S_IFREG|0644, st_size=299, ...}) = 0 <0.000105>
+5832  17:09:08.266789 ioctl(3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc>, TCGETS, 0xffffcf3c8e50) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000051>
+5832  17:09:08.267057 lseek(3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc>, 0, SEEK_CUR) = 0 <0.000049>
+5832  17:09:08.267278 lseek(3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc>, 0, SEEK_CUR) = 0 <0.000067>
+5832  17:09:08.267573 fstat(3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc>, {st_mode=S_IFREG|0644, st_size=299, ...}) = 0 <0.000050>
+5832  17:09:08.267808 read(3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc>, "\363\r\r\n\0\0\0\0\32F\\h\233\0\0\0\343\0\0\0\0\0\0\0\0\0\0\0\0\4\0\0\0\0\0\0\0\363H\0\0\0\225\0\36\0S\0S\1K\0r\0\\\0R\2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\"\0005\0\0\0\0\0\0\0 \0g\1!\0\\\2\7\0a\3\0\0 \0\37\0g\1f\0=\3\37\0f\1)\2\351\0\0\0\0N)\3\332\22apport_python_hook\332\7install\332\vImportError\251\0\363\0\0\0\0\332$/usr/lib/python3.13/sitec"..., 300) = 299 <0.000058>
+5832  17:09:08.268029 read(3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc>, "", 1) = 0 <0.000049>
+5832  17:09:08.268256 close(3</usr/lib/python3.13/__pycache__/sitecustomize.cpython-313.pyc>) = 0 <0.000061>
+5832  17:09:08.268904 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000073>
+5832  17:09:08.269447 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000090>
+5832  17:09:08.269854 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000060>
+5832  17:09:08.270288 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000059>
+5832  17:09:08.270627 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3.13/lib-dynload> <0.000086>
+5832  17:09:08.270948 fstat(3</usr/lib/python3.13/lib-dynload>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0 <0.000046>
+5832  17:09:08.271169 getdents64(3</usr/lib/python3.13/lib-dynload>, 0xb6c4d60 /* 49 entries */, 32768) = 3200 <0.000165>
+5832  17:09:08.271595 getdents64(3</usr/lib/python3.13/lib-dynload>, 0xb6c4d60 /* 0 entries */, 32768) = 0 <0.000058>
+5832  17:09:08.271863 close(3</usr/lib/python3.13/lib-dynload>) = 0 <0.000091>
+5832  17:09:08.272283 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000065>
+5832  17:09:08.272672 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000062>
+5832  17:09:08.273068 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000058>
+5832  17:09:08.273420 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/local/lib/python3.13/dist-packages> <0.000081>
+5832  17:09:08.273716 fstat(3</usr/local/lib/python3.13/dist-packages>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0 <0.000049>
+5832  17:09:08.273969 brk(0xb6f6000)    = 0xb6f6000 <0.000084>
+5832  17:09:08.274238 getdents64(3</usr/local/lib/python3.13/dist-packages>, 0xb6cd090 /* 2 entries */, 32768) = 48 <0.000093>
+5832  17:09:08.274513 getdents64(3</usr/local/lib/python3.13/dist-packages>, 0xb6cd090 /* 0 entries */, 32768) = 0 <0.000046>
+5832  17:09:08.274714 brk(0xb6ee000)    = 0xb6ee000 <0.000123>
+5832  17:09:08.274958 close(3</usr/local/lib/python3.13/dist-packages>) = 0 <0.000055>
+5832  17:09:08.275304 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000060>
+5832  17:09:08.275648 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000056>
+5832  17:09:08.278676 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000083>
+5832  17:09:08.279187 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3</usr/lib/python3/dist-packages> <0.000080>
+5832  17:09:08.279563 fstat(3</usr/lib/python3/dist-packages>, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0 <0.000049>
+5832  17:09:08.279815 getdents64(3</usr/lib/python3/dist-packages>, 0xb6cd090 /* 85 entries */, 32768) = 3400 <0.000262>
+5832  17:09:08.280456 getdents64(3</usr/lib/python3/dist-packages>, 0xb6cd090 /* 0 entries */, 32768) = 0 <0.000077>
+5832  17:09:08.280859 close(3</usr/lib/python3/dist-packages>) = 0 <0.000112>
+5832  17:09:08.281800 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000159>
+5832  17:09:08.282482 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3.13/lib-dynload", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000060>
+5832  17:09:08.282822 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/lib/python3.13/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000059>
+5832  17:09:08.283111 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/python3/dist-packages", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000057>
+5832  17:09:08.283816 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab/tasks/05-file-lock/lock.py", {st_mode=S_IFREG|0755, st_size=149, ...}, 0) = 0 <0.000083>
+5832  17:09:08.284267 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab/tasks/05-file-lock/lock.py", O_RDONLY|O_CLOEXEC) = 3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py> <0.000083>
+5832  17:09:08.284567 fstat(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, {st_mode=S_IFREG|0755, st_size=149, ...}) = 0 <0.000048>
+5832  17:09:08.284784 ioctl(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, TCGETS, 0xffffcf3c9c20) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000049>
+5832  17:09:08.285058 lseek(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, 0, SEEK_CUR) = 0 <0.000047>
+5832  17:09:08.285266 lseek(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, 0, SEEK_CUR) = 0 <0.000047>
+5832  17:09:08.285464 lseek(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, 0, SEEK_END) = 149 <0.000046>
+5832  17:09:08.285649 lseek(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, 0, SEEK_CUR) = 149 <0.000044>
+5832  17:09:08.285872 lseek(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, 0, SEEK_SET) = 0 <0.000048>
+5832  17:09:08.286108 read(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, "#!/usr/bin/env python3\nimport fcntl,time,sys\nfd=open(\"/tmp/shared.lock\",\"w\")\nfcntl.flock(fd,fcntl.LOCK_EX)\nprint(\"locked\",flush=True)\ntime.sleep(300)", 65536) = 149 <0.000055>
+5832  17:09:08.286341 read(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, "", 61440) = 0 <0.000047>
+5832  17:09:08.286651 lseek(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, 0, SEEK_SET) = 0 <0.000052>
+5832  17:09:08.286927 close(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>) = 0 <0.000058>
+5832  17:09:08.287204 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab/tasks/05-file-lock/lock.py", {st_mode=S_IFREG|0755, st_size=149, ...}, 0) = 0 <0.000063>
+5832  17:09:08.287639 readlinkat(AT_FDCWD</home/hlebushek/strace-lab>, "tasks/05-file-lock/lock.py", 0xffffcf3b83b0, 4096) = -1 EINVAL (Недопустимый аргумент) <0.000393>
+5832  17:09:08.288350 getcwd("/home/hlebushek/strace-lab", 1024) = 27 <0.000049>
+5832  17:09:08.288570 readlinkat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab/tasks", 0xffffcf3b8f40, 1023) = -1 EINVAL (Недопустимый аргумент) <0.000053>
+5832  17:09:08.288790 readlinkat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab/tasks/05-file-lock", 0xffffcf3b8f40, 1023) = -1 EINVAL (Недопустимый аргумент) <0.000052>
+5832  17:09:08.288990 readlinkat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab/tasks/05-file-lock/lock.py", 0xffffcf3b8f40, 1023) = -1 EINVAL (Недопустимый аргумент) <0.000052>
+5832  17:09:08.289346 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab/tasks/05-file-lock/lock.py", O_RDONLY) = 3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py> <0.000079>
+5832  17:09:08.289628 ioctl(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, FIOCLEX) = 0 <0.000064>
+5832  17:09:08.289858 fstat(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, {st_mode=S_IFREG|0755, st_size=149, ...}) = 0 <0.000088>
+5832  17:09:08.290123 ioctl(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, TCGETS, 0xffffcf3ca320) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000049>
+5832  17:09:08.290387 lseek(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, 0, SEEK_CUR) = 0 <0.000049>
+5832  17:09:08.290587 fstat(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, {st_mode=S_IFREG|0755, st_size=149, ...}) = 0 <0.000049>
+5832  17:09:08.290856 read(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, "#!/usr/bin/env python3\nimport fcntl,time,sys\nfd=open(\"/tmp/shared.lock\",\"w\")\nfcntl.flock(fd,fcntl.LOCK_EX)\nprint(\"locked\",flush=True)\ntime.sleep(300)", 4096) = 149 <0.000065>
+5832  17:09:08.291138 lseek(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, 0, SEEK_SET) = 0 <0.000049>
+5832  17:09:08.291502 read(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, "#!/usr/bin/env python3\nimport fcntl,time,sys\nfd=open(\"/tmp/shared.lock\",\"w\")\nfcntl.flock(fd,fcntl.LOCK_EX)\nprint(\"locked\",flush=True)\ntime.sleep(300)", 4096) = 149 <0.000059>
+5832  17:09:08.292120 read(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>, "", 4096) = 0 <0.000055>
+5832  17:09:08.292472 close(3</home/hlebushek/strace-lab/tasks/05-file-lock/lock.py>) = 0 <0.000061>
+5832  17:09:08.293752 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/tmp/shared.lock", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0666) = 3</tmp/shared.lock> <0.000114>
+5832  17:09:08.294214 fstat(3</tmp/shared.lock>, {st_mode=S_IFREG|0664, st_size=0, ...}) = 0 <0.000049>
+5832  17:09:08.294447 ioctl(3</tmp/shared.lock>, TCGETS, 0xffffcf3c9d50) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000047>
+5832  17:09:08.294679 lseek(3</tmp/shared.lock>, 0, SEEK_CUR) = 0 <0.000046>
+5832  17:09:08.294969 lseek(3</tmp/shared.lock>, 0, SEEK_CUR) = 0 <0.000046>
+5832  17:09:08.295246 flock(3</tmp/shared.lock>, LOCK_EX) = ? ERESTARTSYS (To be restarted if SA_RESTART is set) <0.930098>
+5832  17:09:09.225642 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=5833, si_uid=1000} ---
+5832  17:09:09.228696 +++ killed by SIGTERM +++

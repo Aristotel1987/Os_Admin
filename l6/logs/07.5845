@@ -1,0 +1,49 @@
+17:09:09.797239 set_robust_list(0xffffa41e2100, 24) = 0 <0.000452>
+17:09:09.798245 rt_sigprocmask(SIG_SETMASK, [INT TERM CHLD], NULL, 8) = 0 <0.000108>
+17:09:09.798814 getpid()                = 5845 <0.000068>
+17:09:09.799170 close(255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>) = 0 <0.000170>
+17:09:09.799789 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000078>
+17:09:09.800244 rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000063>
+17:09:09.800543 rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000069>
+17:09:09.800852 rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000092>
+17:09:09.801329 rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000074>
+17:09:09.801678 rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, 8) = 0 <0.000110>
+17:09:09.802182 rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=0xaaaabf9e6440, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0 <0.000097>
+17:09:09.802591 rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000182>
+17:09:09.803338 rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000113>
+17:09:09.803866 rt_sigaction(SIGCHLD, {sa_handler=0xaaaabf9e6440, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0 <0.000088>
+17:09:09.804280 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000087>
+17:09:09.804656 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000079>
+17:09:09.805267 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/dev/null", O_RDONLY) = 3</dev/null> <0.000243>
+17:09:09.806189 dup3(3</dev/null>, 0</dev/pts/0>, 0) = 0</dev/null> <0.000114>
+17:09:09.806832 close(3</dev/null>)     = 0 <0.000110>
+17:09:09.807733 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/nonexistent", 0xffffdee336a8, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000112>
+17:09:09.808226 chdir("/nonexistent")   = -1 ENOENT (Нет такого файла или каталога) <0.000068>
+17:09:09.808516 chdir("/nonexistent")   = -1 ENOENT (Нет такого файла или каталога) <0.000064>
+17:09:09.808904 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3</etc/locale.alias> <0.000149>
+17:09:09.809424 fstat(3</etc/locale.alias>, {st_mode=S_IFREG|0644, st_size=2996, ...}) = 0 <0.000064>
+17:09:09.809790 read(3</etc/locale.alias>, "# Locale name alias data base.\n# Copyright (C) 1996-2025 Free Software Foundation, Inc.\n#\n# This program is free softwar"..., 4096) = 2996 <0.000129>
+17:09:09.810281 read(3</etc/locale.alias>, "", 4096) = 0 <0.000068>
+17:09:09.810592 close(3</etc/locale.alias>) = 0 <0.000096>
+17:09:09.810973 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru_RU.UTF-8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000116>
+17:09:09.811394 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru_RU.utf8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000081>
+17:09:09.811714 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru_RU/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000093>
+17:09:09.812027 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru.UTF-8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000095>
+17:09:09.812361 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru.utf8/LC_MESSAGES/libc.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000076>
+17:09:09.812722 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru/LC_MESSAGES/libc.mo", O_RDONLY) = 3</usr/share/locale/ru/LC_MESSAGES/libc.mo> <0.000093>
+17:09:09.813153 fstat(3</usr/share/locale/ru/LC_MESSAGES/libc.mo>, {st_mode=S_IFREG|0644, st_size=191646, ...}) = 0 <0.000310>
+17:09:09.813886 mmap(NULL, 191646, PROT_READ, MAP_PRIVATE, 3</usr/share/locale/ru/LC_MESSAGES/libc.mo>, 0) = 0xffffa3c94000 <0.000142>
+17:09:09.814309 close(3</usr/share/locale/ru/LC_MESSAGES/libc.mo>) = 0 <0.000061>
+17:09:09.814851 fstat(2</dev/pts/0>, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0 <0.000090>
+17:09:09.815393 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru_RU.UTF-8/LC_MESSAGES/bash.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000142>
+17:09:09.815915 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru_RU.utf8/LC_MESSAGES/bash.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000240>
+17:09:09.816509 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru_RU/LC_MESSAGES/bash.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000210>
+17:09:09.817417 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru.UTF-8/LC_MESSAGES/bash.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000136>
+17:09:09.817951 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru.utf8/LC_MESSAGES/bash.mo", O_RDONLY) = -1 ENOENT (Нет такого файла или каталога) <0.000172>
+17:09:09.818587 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/share/locale/ru/LC_MESSAGES/bash.mo", O_RDONLY) = 3</usr/share/locale/ru/LC_MESSAGES/bash.mo> <0.000169>
+17:09:09.819225 fstat(3</usr/share/locale/ru/LC_MESSAGES/bash.mo>, {st_mode=S_IFREG|0644, st_size=128229, ...}) = 0 <0.000151>
+17:09:09.819889 mmap(NULL, 128229, PROT_READ, MAP_PRIVATE, 3</usr/share/locale/ru/LC_MESSAGES/bash.mo>, 0) = 0xffffa3c74000 <0.000295>
+17:09:09.820830 close(3</usr/share/locale/ru/LC_MESSAGES/bash.mo>) = 0 <0.000331>
+17:09:09.821892 write(2</dev/pts/0>, "tasks/07-daemonize/daemon.sh: \321\201\321\202\321\200\320\276\320\272\320\260 2: cd: /nonexistent: \320\235\320\265\321\202 \321\202\320\260\320\272\320\276\320\263\320\276 \321\204\320\260\320\271\320\273\320\260 \320\270\320\273\320\270 \320\272\320\260\321\202\320\260\320\273\320\276\320\263\320\260\n", 119) = 119 <0.000259>
+17:09:09.822945 exit_group(1)           = ?
+17:09:09.824619 +++ exited with 1 +++

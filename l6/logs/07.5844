@@ -1,0 +1,140 @@
+17:09:09.740224 execve("/usr/bin/bash", ["bash", "tasks/07-daemonize/daemon.sh"], 0xffffdb397850 /* 31 vars */) = 0 <0.001678>
+17:09:09.742869 brk(NULL)               = 0xaaaaeab3a000 <0.000072>
+17:09:09.743459 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa41f1000 <0.000127>
+17:09:09.743940 faccessat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/ld.so.preload", R_OK) = -1 ENOENT (Нет такого файла или каталога) <0.000153>
+17:09:09.745697 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3</etc/ld.so.cache> <0.000154>
+17:09:09.746379 fstat(3</etc/ld.so.cache>, {st_mode=S_IFREG|0644, st_size=50787, ...}) = 0 <0.000189>
+17:09:09.747023 mmap(NULL, 50787, PROT_READ, MAP_PRIVATE, 3</etc/ld.so.cache>, 0) = 0xffffa41e4000 <0.000145>
+17:09:09.747472 close(3</etc/ld.so.cache>) = 0 <0.000057>
+17:09:09.747811 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libtinfo.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libtinfo.so.6.5> <0.000122>
+17:09:09.748378 read(3</usr/lib/aarch64-linux-gnu/libtinfo.so.6.5>, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0 \6\4\0\0\0\0\0\0\0\0\0@\08\0\t\0@\0\34\0\33\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0@\372\2\0\0\0\0\0@\372\2\0\0\0\0\0\0\0\1\0\0\0\0\0"..., 832) = 832 <0.000101>
+17:09:09.748863 fstat(3</usr/lib/aarch64-linux-gnu/libtinfo.so.6.5>, {st_mode=S_IFREG|0644, st_size=265504, ...}) = 0 <0.000059>
+17:09:09.749215 mmap(NULL, 329936, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffffa4167000 <0.000106>
+17:09:09.749469 mmap(0xffffa4170000, 264400, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libtinfo.so.6.5>, 0) = 0xffffa4170000 <0.000235>
+17:09:09.749898 munmap(0xffffa4167000, 36864) = 0 <0.000114>
+17:09:09.750237 munmap(0xffffa41b1000, 26832) = 0 <0.000076>
+17:09:09.750462 mprotect(0xffffa41a0000, 49152, PROT_NONE) = 0 <0.000102>
+17:09:09.750693 mmap(0xffffa41ac000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libtinfo.so.6.5>, 0x3c000) = 0xffffa41ac000 <0.000112>
+17:09:09.751102 close(3</usr/lib/aarch64-linux-gnu/libtinfo.so.6.5>) = 0 <0.000441>
+17:09:09.751860 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/libc.so.6> <0.000145>
+17:09:09.752359 read(3</usr/lib/aarch64-linux-gnu/libc.so.6>, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\300$\2\0\0\0\0\0@\0\0\0\0\0\0\0H\"\33\0\0\0\0\0\0\0\0\0@\08\0\r\0@\0=\0<\0\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\330\2\0\0\0\0\0\0\330\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0"..., 832) = 832 <0.000065>
+17:09:09.752653 fstat(3</usr/lib/aarch64-linux-gnu/libc.so.6>, {st_mode=S_IFREG|0755, st_size=1782152, ...}) = 0 <0.000051>
+17:09:09.752960 mmap(NULL, 1892400, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffffa3fa1000 <0.000106>
+17:09:09.753227 mmap(0xffffa3fb0000, 1826864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libc.so.6>, 0) = 0xffffa3fb0000 <0.000218>
+17:09:09.753741 munmap(0xffffa3fa1000, 61440) = 0 <0.000118>
+17:09:09.754056 munmap(0xffffa416f000, 48) = 0 <0.000083>
+17:09:09.754306 mprotect(0xffffa414e000, 61440, PROT_NONE) = 0 <0.000133>
+17:09:09.754594 mmap(0xffffa415d000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3</usr/lib/aarch64-linux-gnu/libc.so.6>, 0x1ad000) = 0xffffa415d000 <0.000176>
+17:09:09.755073 mmap(0xffffa4162000, 49200, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffffa4162000 <0.000122>
+17:09:09.755459 close(3</usr/lib/aarch64-linux-gnu/libc.so.6>) = 0 <0.000052>
+17:09:09.755847 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffffa41e2000 <0.000111>
+17:09:09.756247 set_tid_address(0xffffa41e20f0) = 5844 <0.000047>
+17:09:09.756449 set_robust_list(0xffffa41e2100, 24) = 0 <0.000044>
+17:09:09.756664 rseq(0xffffa41e27e0, 0x20, 0, 0xd428bc00) = 0 <0.000064>
+17:09:09.757284 mprotect(0xffffa415d000, 12288, PROT_READ) = 0 <0.000161>
+17:09:09.758020 mprotect(0xffffa41ac000, 16384, PROT_READ) = 0 <0.000568>
+17:09:09.759801 mprotect(0xaaaabfadb000, 20480, PROT_READ) = 0 <0.000180>
+17:09:09.760697 mprotect(0xffffa41f6000, 8192, PROT_READ) = 0 <0.000345>
+17:09:09.761684 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0 <0.000081>
+17:09:09.762287 munmap(0xffffa41e4000, 50787) = 0 <0.000196>
+17:09:09.762843 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/dev/tty", O_RDWR|O_NONBLOCK) = 3</dev/tty> <0.000125>
+17:09:09.763500 close(3</dev/tty>)      = 0 <0.000116>
+17:09:09.763937 getrandom("\x2d\x93\xf3\x9b\xe0\x20\x3a\x06", 8, GRND_NONBLOCK) = 8 <0.000409>
+17:09:09.764627 brk(NULL)               = 0xaaaaeab3a000 <0.000057>
+17:09:09.764875 brk(0xaaaaeab5b000)     = 0xaaaaeab5b000 <0.000093>
+17:09:09.765185 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3</usr/lib/locale/locale-archive> <0.000105>
+17:09:09.765577 fstat(3</usr/lib/locale/locale-archive>, {st_mode=S_IFREG|0644, st_size=3067632, ...}) = 0 <0.000050>
+17:09:09.765839 mmap(NULL, 3067632, PROT_READ, MAP_PRIVATE, 3</usr/lib/locale/locale-archive>, 0) = 0xffffa3cc3000 <0.000130>
+17:09:09.766200 close(3</usr/lib/locale/locale-archive>) = 0 <0.000071>
+17:09:09.766791 openat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY|O_CLOEXEC) = 3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache> <0.000112>
+17:09:09.767233 fstat(3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache>, {st_mode=S_IFREG|0644, st_size=27028, ...}) = 0 <0.000053>
+17:09:09.767522 mmap(NULL, 27028, PROT_READ, MAP_SHARED, 3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache>, 0) = 0xffffa41ea000 <0.000137>
+17:09:09.767861 close(3</usr/lib/aarch64-linux-gnu/gconv/gconv-modules.cache>) = 0 <0.000056>
+17:09:09.768136 futex(0xffffa416165c, FUTEX_WAKE_PRIVATE, 2147483647) = 0 <0.000056>
+17:09:09.768415 getuid()                = 1000 <0.000059>
+17:09:09.768715 getgid()                = 1000 <0.000054>
+17:09:09.769001 geteuid()               = 1000 <0.000047>
+17:09:09.769201 getegid()               = 1000 <0.000056>
+17:09:09.769457 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0 <0.000046>
+17:09:09.770278 rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000086>
+17:09:09.770766 rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0 <0.000061>
+17:09:09.771102 rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000108>
+17:09:09.771536 rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000050>
+17:09:09.771807 rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000046>
+17:09:09.772017 rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000046>
+17:09:09.772219 rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000049>
+17:09:09.772435 rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000048>
+17:09:09.772657 rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000054>
+17:09:09.772889 rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000077>
+17:09:09.773251 rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000140>
+17:09:09.774050 rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000135>
+17:09:09.774741 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0 <0.000051>
+17:09:09.775029 rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=0}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0 <0.000077>
+17:09:09.775358 uname({sysname="Linux", nodename="orangepi3b", ...}) = 0 <0.000042>
+17:09:09.775741 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000074>
+17:09:09.776087 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, ".", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000046>
+17:09:09.776335 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0 <0.000049>
+17:09:09.776579 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek", {st_mode=S_IFDIR|0700, st_size=4096, ...}, 0) = 0 <0.000059>
+17:09:09.776920 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek/strace-lab", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000060>
+17:09:09.777206 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/home/hlebushek", {st_mode=S_IFDIR|0700, st_size=4096, ...}, 0) = 0 <0.000046>
+17:09:09.777432 getpid()                = 5844 <0.000034>
+17:09:09.777645 getppid()               = 5841 <0.000035>
+17:09:09.777829 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, ".", {st_mode=S_IFDIR|0775, st_size=4096, ...}, 0) = 0 <0.000046>
+17:09:09.778072 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/local/bin/bash", 0xffffdee33be8, 0) = -1 ENOENT (Нет такого файла или каталога) <0.000048>
+17:09:09.778287 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1412096, ...}, 0) = 0 <0.000076>
+17:09:09.778593 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1412096, ...}, 0) = 0 <0.000060>
+17:09:09.778861 geteuid()               = 1000 <0.000034>
+17:09:09.779014 getegid()               = 1000 <0.000038>
+17:09:09.779156 getuid()                = 1000 <0.000033>
+17:09:09.779293 getgid()                = 1000 <0.000034>
+17:09:09.779429 faccessat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/bash", X_OK) = 0 <0.000080>
+17:09:09.779681 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/bash", {st_mode=S_IFREG|0755, st_size=1412096, ...}, 0) = 0 <0.000053>
+17:09:09.779919 geteuid()               = 1000 <0.000039>
+17:09:09.780153 getegid()               = 1000 <0.000366>
+17:09:09.780698 getuid()                = 1000 <0.000038>
+17:09:09.780899 getgid()                = 1000 <0.000034>
+17:09:09.781045 faccessat(AT_FDCWD</home/hlebushek/strace-lab>, "/usr/bin/bash", R_OK) = 0 <0.000101>
+17:09:09.781485 getpid()                = 5844 <0.000040>
+17:09:09.781700 getppid()               = 5841 <0.000033>
+17:09:09.781852 getpid()                = 5844 <0.000033>
+17:09:09.781990 getppid()               = 5841 <0.000033>
+17:09:09.782236 getpgid(0)              = 5840 <0.000039>
+17:09:09.782400 ioctl(2</dev/pts/0>, TIOCGPGRP, [5801]) = 0 <0.000049>
+17:09:09.782703 rt_sigaction(SIGCHLD, {sa_handler=0xaaaabf9e6440, sa_mask=[], sa_flags=SA_RESTART}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTART}, 8) = 0 <0.000040>
+17:09:09.782929 prlimit64(0, RLIMIT_NPROC, NULL, {rlim_cur=29595, rlim_max=29595}) = 0 <0.000041>
+17:09:09.783439 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0 <0.000049>
+17:09:09.783780 openat(AT_FDCWD</home/hlebushek/strace-lab>, "tasks/07-daemonize/daemon.sh", O_RDONLY) = 3</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh> <0.000083>
+17:09:09.784120 newfstatat(AT_FDCWD</home/hlebushek/strace-lab>, "tasks/07-daemonize/daemon.sh", {st_mode=S_IFREG|0755, st_size=60, ...}, 0) = 0 <0.000065>
+17:09:09.784493 ioctl(3</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, TCGETS, 0xffffdee33f90) = -1 ENOTTY (Неприменимый к данному устройству ioctl) <0.000099>
+17:09:09.785090 lseek(3</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, 0, SEEK_CUR) = 0 <0.000143>
+17:09:09.785755 read(3</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, "#!/usr/bin/env bash\n( cd /nonexistent && exec sleep 1000 ) &", 80) = 60 <0.000096>
+17:09:09.786279 lseek(3</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, 0, SEEK_SET) = 0 <0.000063>
+17:09:09.786707 prlimit64(0, RLIMIT_NOFILE, NULL, {rlim_cur=1024, rlim_max=512*1024}) = 0 <0.000134>
+17:09:09.787284 fcntl(255, F_GETFD)     = -1 EBADF (Неправильный дескриптор файла) <0.000085>
+17:09:09.787719 dup3(3</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, 255, 0) = 255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh> <0.000066>
+17:09:09.788111 close(3</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>) = 0 <0.000043>
+17:09:09.788327 fcntl(255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, F_SETFD, FD_CLOEXEC) = 0 <0.000041>
+17:09:09.788535 fcntl(255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, F_GETFL) = 0x20000 (flags O_RDONLY|O_LARGEFILE) <0.000039>
+17:09:09.788735 fstat(255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, {st_mode=S_IFREG|0755, st_size=60, ...}) = 0 <0.000044>
+17:09:09.789014 lseek(255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, 0, SEEK_CUR) = 0 <0.000048>
+17:09:09.789343 read(255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, "#!/usr/bin/env bash\n( cd /nonexistent && exec sleep 1000 ) &", 60) = 60 <0.000061>
+17:09:09.789708 read(255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, "", 60) = 0 <0.000135>
+17:09:09.790211 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0 <0.000054>
+17:09:09.790531 rt_sigprocmask(SIG_BLOCK, [INT TERM CHLD], [], 8) = 0 <0.000055>
+17:09:09.790874 rt_sigprocmask(SIG_BLOCK, ~[], [INT TERM CHLD], 8) = 0 <0.000039>
+17:09:09.791085 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0xffffa41e20f0) = 5845 <0.000614>
+17:09:09.792000 rt_sigprocmask(SIG_SETMASK, [INT TERM CHLD], NULL, 8) = 0 <0.000044>
+17:09:09.792387 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000041>
+17:09:09.792723 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000039>
+17:09:09.793009 rt_sigprocmask(SIG_BLOCK, [CHLD], [CHLD], 8) = 0 <0.000307>
+17:09:09.793601 rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0 <0.000040>
+17:09:09.793820 rt_sigprocmask(SIG_BLOCK, [CHLD], [CHLD], 8) = 0 <0.000037>
+17:09:09.794001 rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0 <0.000052>
+17:09:09.794201 rt_sigprocmask(SIG_BLOCK, [CHLD], [CHLD], 8) = 0 <0.000037>
+17:09:09.794390 rt_sigprocmask(SIG_SETMASK, [CHLD], NULL, 8) = 0 <0.000036>
+17:09:09.794549 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000036>
+17:09:09.794864 read(255</home/hlebushek/strace-lab/tasks/07-daemonize/daemon.sh>, "", 60) = 0 <0.000062>
+17:09:09.795267 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0 <0.000047>
+17:09:09.795537 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0 <0.000035>
+17:09:09.795838 exit_group(0)           = ?
+17:09:09.796994 +++ exited with 0 +++
