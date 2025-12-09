@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<yandex>
+    <remote_servers>
+        <cluster_3x3>
+            <!-- Шард 1 -->
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>ch-s1-r1.dc.local</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>ch-s1-r2.dc.local</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>ch-s1-r3.dc.local</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+
+            <!-- Шард 2 -->
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>ch-s2-r1.dc.local</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>ch-s2-r2.dc.local</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>ch-s2-r3.dc.local</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+
+            <!-- Шард 3 -->
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>ch-s3-r1.dc.local</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>ch-s3-r2.dc.local</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>ch-s3-r3.dc.local</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </cluster_3x3>
+    </remote_servers>
+</yandex>

@@ -1,0 +1,15 @@
+[Unit]
+Description=A high performance web server and a reverse proxy server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/sbin/nginx -g 'daemon off;'
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+PIDFile=/run/nginx.pid
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=ZooKeeper server zk03
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=zookeeper
+Group=zookeeper
+ExecStart=/usr/bin/java -cp /usr/share/java/* org.apache.zookeeper.server.quorum.QuorumPeerMain /etc/zookeeper/zoo.cfg
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

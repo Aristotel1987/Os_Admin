@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<yandex>
+    <profiles>
+        <readonly_profile>
+            <readonly>1</readonly>
+        </readonly_profile>
+    </profiles>
+
+    <users>
+        <readonly>
+            <password></password>
+            <networks>
+                <ip>10.10.0.0/24</ip>
+            </networks>
+            <profile>readonly_profile</profile>
+            <quota>default</quota>
+        </readonly>
+    </users>
+</yandex>

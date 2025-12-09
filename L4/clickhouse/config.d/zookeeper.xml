@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<yandex>
+    <zookeeper-servers>
+        <node index="1">
+            <host>zk01.dc.local</host>
+            <port>2181</port>
+        </node>
+        <node index="2">
+            <host>zk02.dc.local</host>
+            <port>2181</port>
+        </node>
+        <node index="3">
+            <host>zk03.dc.local</host>
+            <port>2181</port>
+        </node>
+    </zookeeper-servers>
+</yandex>

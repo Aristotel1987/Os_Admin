@@ -1,0 +1,20 @@
+10.10.0.11   proxy01.dc.local proxy01
+10.10.0.12   proxy02.dc.local proxy02
+
+10.10.0.100  vip.dc.local vip
+
+10.10.0.21   zk01.dc.local zk01
+10.10.0.22   zk02.dc.local zk02
+10.10.0.23   zk03.dc.local zk03
+
+10.10.0.31   ch-s1-r1.dc.local ch-s1-r1
+10.10.0.32   ch-s1-r2.dc.local ch-s1-r2
+10.10.0.33   ch-s1-r3.dc.local ch-s1-r3
+
+10.10.0.41   ch-s2-r1.dc.local ch-s2-r1
+10.10.0.42   ch-s2-r2.dc.local ch-s2-r2
+10.10.0.43   ch-s2-r3.dc.local ch-s2-r3
+
+10.10.0.51   ch-s3-r1.dc.local ch-s3-r1
+10.10.0.52   ch-s3-r2.dc.local ch-s3-r2
+10.10.0.53   ch-s3-r3.dc.local ch-s3-r3
