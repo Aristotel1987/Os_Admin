@@ -1,0 +1,4 @@
+keepalived_interface: eth0
+keepalived_vip: 10.10.0.100
+keepalived_vrid: 51
+keepalived_authpass: labpass

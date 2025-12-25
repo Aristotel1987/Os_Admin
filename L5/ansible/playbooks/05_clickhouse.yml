@@ -1,0 +1,6 @@
+- hosts: clickhouse
+  become: true
+  gather_facts: true
+  serial: 3
+  roles:
+    - { role: role_clickhouse, tags: [ch] }

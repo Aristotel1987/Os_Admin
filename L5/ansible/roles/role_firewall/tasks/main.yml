@@ -1,0 +1,32 @@
+- name: Ensure nftables installed
+  ansible.builtin.apt:
+    name: nftables
+    state: present
+    update_cache: true
+  when: fw_enable | bool
+  tags: [fw]
+
+- name: Deploy nftables.conf
+  ansible.builtin.template:
+    src: nftables.conf.j2
+    dest: /etc/nftables.conf
+    owner: root
+    group: root
+    mode: "0644"
+  when: fw_enable | bool
+  notify: reload nft
+  tags: [fw]
+
+- name: Enable and start nftables
+  ansible.builtin.service:
+    name: nftables
+    enabled: true
+    state: started
+  when: fw_enable | bool
+  tags: [fw]
+
+- name: Apply rules now
+  ansible.builtin.command: nft -f /etc/nftables.conf
+  changed_when: false
+  when: fw_enable | bool
+  tags: [fw]

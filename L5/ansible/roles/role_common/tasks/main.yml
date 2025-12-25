@@ -1,0 +1,71 @@
+- name: Install base packages (Debian 12)
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+    name:
+      - sudo
+      - python3
+      - python3-apt
+      - openssh-server
+      - ca-certificates
+      - curl
+      - vim
+      - rsync
+      - netcat-openbsd
+      - iproute2
+      - dnsutils
+      - nftables
+      - jq
+    state: present
+  tags: [common]
+
+- name: Set timezone
+  ansible.builtin.timezone:
+    name: "{{ common_timezone }}"
+  tags: [common]
+
+- name: Ensure locales installed
+  ansible.builtin.apt:
+    name: locales
+    state: present
+  tags: [common]
+
+- name: Generate locale (best-effort)
+  ansible.builtin.command: "locale-gen {{ common_locale }}"
+  changed_when: false
+  failed_when: false
+  tags: [common]
+
+- name: Configure sshd (hardening)
+  ansible.builtin.template:
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart ssh
+  tags: [common]
+
+- name: Ensure sudo NOPASSWD for group admin
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/10-admin
+    content: |
+      %admin ALL=(ALL) NOPASSWD:ALL
+    owner: root
+    group: root
+    mode: "0440"
+  tags: [common]
+
+- name: Ensure fstrim.timer enabled only if it exists
+  ansible.builtin.stat:
+    path: /lib/systemd/system/fstrim.timer
+  register: fstrim_timer
+  tags: [common]
+
+- name: Enable fstrim.timer (when present)
+  ansible.builtin.service:
+    name: fstrim.timer
+    enabled: true
+    state: started
+  when: fstrim_timer.stat.exists
+  tags: [common]

@@ -1,0 +1,10 @@
+<yandex>
+  <zookeeper>
+  {% for z in groups['zookeeper'] %}
+    <node>
+      <host>{{ hostvars[z].inventory_hostname }}.{{ dc_domain }}</host>
+      <port>2181</port>
+    </node>
+  {% endfor %}
+  </zookeeper>
+</yandex>

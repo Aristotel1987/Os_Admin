@@ -1,0 +1,5 @@
+- hosts: zookeeper
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_zookeeper, tags: [zk] }

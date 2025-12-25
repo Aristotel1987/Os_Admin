@@ -1,0 +1,23 @@
+dc_domain: dc.local
+lab_subnet_cidr: 10.10.0.0/24
+
+# DNS (по умолчанию dnsmasq)
+dns_mode: dnsmasq          # dnsmasq | hosts_only
+dns_server_ip: 10.10.0.21  # куда указывать resolv.conf (обычно zk01)
+manage_resolv_conf: true
+manage_etc_hosts: true
+
+# common
+common_timezone: "Asia/Almaty"
+common_locale: "ru_RU.UTF-8"
+ssh_allow_users: [admin]
+
+# firewall
+fw_enable: true
+fw_mgmt_ssh_port: 22
+fw_log_drops: true
+
+# clickhouse base
+ch_http_port: 8123
+ch_tcp_port: 9000
+cluster_name: cluster_3x3

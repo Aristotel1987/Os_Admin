@@ -1,0 +1,9 @@
+# Managed by Ansible (role_zookeeper)
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir={{ zk_data_dir }}
+clientPort={{ zk_client_port }}
+{% for z in groups['zookeeper'] %}
+server.{{ hostvars[z].myid }}={{ hostvars[z].inventory_hostname }}.{{ dc_domain }}:{{ zk_peer_port }}:{{ zk_election_port }}
+{% endfor %}

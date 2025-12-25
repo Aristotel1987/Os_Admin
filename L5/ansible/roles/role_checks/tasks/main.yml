@@ -1,0 +1,237 @@
+- name: Ensure local checks dir exists
+  ansible.builtin.file:
+    path: "{{ playbook_dir }}/../checks"
+    state: directory
+    mode: "0755"
+  delegate_to: localhost
+  become: false
+  tags: [checks]
+
+- name: Define paths
+  ansible.builtin.set_fact:
+    checks_dir: "{{ playbook_dir }}/../checks"
+    vip_ip: "{{ keepalived_vip | default('10.10.0.100') }}"
+  tags: [checks]
+
+# 1) VIP failover: stop keepalived on master, verify VIP moves, start back
+- name: Identify current VIP holder (proxy01/proxy02)
+  ansible.builtin.shell: |
+    set -e
+    if ip -4 addr show | grep -q "{{ vip_ip }}/"; then echo "HOLDER={{ inventory_hostname }}"; else echo "HOLDER=none"; fi
+  register: vip_holder_local
+  changed_when: false
+  tags: [checks]
+
+- name: Check VIP on both proxies
+  ansible.builtin.shell: "ip -4 addr show | grep -F '{{ vip_ip }}/' || true"
+  register: vip_proxy01
+  changed_when: false
+  delegate_to: proxy01
+  tags: [checks]
+
+- name: Check VIP on proxy02
+  ansible.builtin.shell: "ip -4 addr show | grep -F '{{ vip_ip }}/' || true"
+  register: vip_proxy02
+  changed_when: false
+  delegate_to: proxy02
+  tags: [checks]
+
+- name: Determine vip_master
+  ansible.builtin.set_fact:
+    vip_master: "{{ 'proxy01' if (vip_proxy01.stdout|length) > 0 else ('proxy02' if (vip_proxy02.stdout|length) > 0 else 'unknown') }}"
+  tags: [checks]
+
+- name: Stop keepalived on current VIP holder
+  ansible.builtin.service:
+    name: keepalived
+    state: stopped
+  delegate_to: "{{ vip_master }}"
+  when: vip_master != 'unknown'
+  tags: [checks]
+
+- name: Wait a moment for failover
+  ansible.builtin.pause:
+    seconds: 3
+  tags: [checks]
+
+- name: Re-check VIP on proxy01
+  ansible.builtin.shell: "ip -4 addr show | grep -F '{{ vip_ip }}/' || true"
+  register: vip_proxy01_after
+  changed_when: false
+  delegate_to: proxy01
+  tags: [checks]
+
+- name: Re-check VIP on proxy02
+  ansible.builtin.shell: "ip -4 addr show | grep -F '{{ vip_ip }}/' || true"
+  register: vip_proxy02_after
+  changed_when: false
+  delegate_to: proxy02
+  tags: [checks]
+
+- name: Start keepalived back on previous holder
+  ansible.builtin.service:
+    name: keepalived
+    state: started
+  delegate_to: "{{ vip_master }}"
+  when: vip_master != 'unknown'
+  tags: [checks]
+
+- name: Save VIP failover report
+  ansible.builtin.copy:
+    dest: "{{ checks_dir }}/vip-failover.txt"
+    content: |
+      VIP={{ vip_ip }}
+      before:
+        proxy01: {{ vip_proxy01.stdout | default('') }}
+        proxy02: {{ vip_proxy02.stdout | default('') }}
+      master_detected={{ vip_master }}
+      after_stop_keepalived:
+        proxy01: {{ vip_proxy01_after.stdout | default('') }}
+        proxy02: {{ vip_proxy02_after.stdout | default('') }}
+  delegate_to: localhost
+  become: false
+  tags: [checks]
+
+# 2) LB behaviour: 20 queries through VIP (hostName)
+- name: 20 requests through VIP
+  ansible.builtin.shell: |
+    set -e
+    for i in $(seq 1 20); do
+      curl -sS --max-time 3 "http://{{ vip_ip }}/?query=SELECT%20hostName()" || true
+      echo
+    done
+  register: rr
+  changed_when: false
+  tags: [checks]
+
+- name: Save LB output
+  ansible.builtin.copy:
+    dest: "{{ checks_dir }}/proxy-lb.txt"
+    content: |
+      # 20 requests to VIP: http://{{ vip_ip }}/?query=SELECT hostName()
+      {{ rr.stdout }}
+  delegate_to: localhost
+  become: false
+  tags: [checks]
+
+# 3) CH node down/up: stop one CH node, run requests, ensure no 502/504, start back
+- name: Pick one clickhouse node for failure test
+  ansible.builtin.set_fact:
+    fail_ch_node: "{{ groups['clickhouse'][0] }}"
+  tags: [checks]
+
+- name: Stop clickhouse-server on fail node
+  ansible.builtin.service:
+    name: clickhouse-server
+    state: stopped
+  delegate_to: "{{ fail_ch_node }}"
+  tags: [checks]
+
+- name: Make 20 requests through VIP while one CH is down
+  ansible.builtin.shell: |
+    set -e
+    for i in $(seq 1 20); do
+      curl -sS -o /dev/null -w "%{http_code}\n" --max-time 3 "http://{{ vip_ip }}/?query=SELECT%201" || echo "000"
+    done
+  register: codes
+  changed_when: false
+  tags: [checks]
+
+- name: Start clickhouse-server back
+  ansible.builtin.service:
+    name: clickhouse-server
+    state: started
+  delegate_to: "{{ fail_ch_node }}"
+  tags: [checks]
+
+- name: Take recent nginx access log tail for upstream addresses
+  ansible.builtin.shell: "tail -n 50 /var/log/nginx/access.json || true"
+  register: nginx_tail
+  changed_when: false
+  tags: [checks]
+
+- name: Save proxy fail-node report
+  ansible.builtin.copy:
+    dest: "{{ checks_dir }}/proxy-fail-node.txt"
+    content: |
+      fail_node={{ fail_ch_node }}
+      http_codes:
+      {{ codes.stdout }}
+      nginx_access_tail:
+      {{ nginx_tail.stdout }}
+  delegate_to: localhost
+  become: false
+  tags: [checks]
+
+# 4) ZK quorum check: ruok from proxy to each zk
+- name: ZK ruok to each node
+  ansible.builtin.shell: |
+    set -e
+    {% for z in groups['zookeeper'] %}
+    echo "== {{ z }} ==";
+    echo ruok | nc -w 2 {{ hostvars[z].inventory_hostname }}.{{ dc_domain }} 2181 || true;
+    echo;
+    {% endfor %}
+  register: zkchk
+  changed_when: false
+  tags: [checks]
+
+- name: Save zk quorum output
+  ansible.builtin.copy:
+    dest: "{{ checks_dir }}/zk-quorum.txt"
+    content: "{{ zkchk.stdout }}
+"
+  delegate_to: localhost
+  become: false
+  tags: [checks]
+
+# 5) CH health: system.clusters and system.replicas via VIP
+- name: CH health via VIP
+  ansible.builtin.shell: |
+    set -e
+    echo "== cluster()==" ;
+    curl -sS --max-time 5 "http://{{ vip_ip }}/?user={{ ch_admin_user }}&password={{ ch_admin_password }}&query=SELECT%20cluster%28%29" || true
+    echo
+    echo "== system.clusters ==" ;
+    curl -sS --max-time 5 "http://{{ vip_ip }}/?user={{ ch_admin_user }}&password={{ ch_admin_password }}&query=SELECT%20*%20FROM%20system.clusters%20WHERE%20cluster%3D%27{{ cluster_name }}%27" || true
+    echo
+    echo "== system.replicas ==" ;
+    curl -sS --max-time 5 "http://{{ vip_ip }}/?user={{ ch_admin_user }}&password={{ ch_admin_password }}&query=SELECT%20database,table,replica_name,is_readonly,queue_size,total_replicas,active_replicas%20FROM%20system.replicas" || true
+    echo
+  register: chhealth
+  changed_when: false
+  tags: [checks]
+
+- name: Save CH health output
+  ansible.builtin.copy:
+    dest: "{{ checks_dir }}/ch-health.txt"
+    content: "{{ chhealth.stdout }}
+"
+  delegate_to: localhost
+  become: false
+  tags: [checks]
+
+# 6) Ports/routes/firewall snapshot
+- name: Snapshot ports/routes/nft
+  ansible.builtin.shell: |
+    set -e
+    echo "== ss -lntp ==";
+    ss -lntp | egrep ':(80|8123|9000|2181|2888|3888)\b' || true
+    echo
+    echo "== ip route ==";
+    ip route || true
+    echo
+    echo "== nft ruleset (head) ==";
+    nft list ruleset | sed -n '1,220p' || true
+  register: snap
+  changed_when: false
+  tags: [checks]
+
+- name: Save snapshot
+  ansible.builtin.copy:
+    dest: "{{ checks_dir }}/routes-ports.txt"
+    content: "{{ snap.stdout }}
+"
+  delegate_to: localhost
+  become: false
+  tags: [checks]

@@ -1,0 +1,16 @@
+<yandex>
+  <remote_servers>
+    <{{ cluster_name }}>
+    {% for shard_name in ['clickhouse_s1','clickhouse_s2','clickhouse_s3'] %}
+      <shard>
+        {% for h in groups[shard_name] %}
+        <replica>
+          <host>{{ hostvars[h].inventory_hostname }}.{{ dc_domain }}</host>
+          <port>{{ ch_tcp_port }}</port>
+        </replica>
+        {% endfor %}
+      </shard>
+    {% endfor %}
+    </{{ cluster_name }}>
+  </remote_servers>
+</yandex>

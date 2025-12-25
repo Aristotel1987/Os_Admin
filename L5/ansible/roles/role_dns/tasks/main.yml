@@ -1,0 +1,71 @@
+- name: Install dnsmasq when selected
+  ansible.builtin.apt:
+    name: dnsmasq
+    state: present
+    update_cache: true
+  when: dns_mode == 'dnsmasq'
+  tags: [dns]
+
+- name: Deploy dnsmasq config
+  ansible.builtin.template:
+    src: dc-local.conf.j2
+    dest: /etc/dnsmasq.d/dc-local.conf
+    owner: root
+    group: root
+    mode: "0644"
+  when: dns_mode == 'dnsmasq'
+  notify: restart dnsmasq
+  tags: [dns]
+
+- name: Ensure dnsmasq enabled and running
+  ansible.builtin.service:
+    name: dnsmasq
+    enabled: true
+    state: started
+  when: dns_mode == 'dnsmasq'
+  tags: [dns]
+
+- name: Detect cloud-init manage_etc_hosts (best-effort)
+  ansible.builtin.shell: "grep -R "manage_etc_hosts" -n /etc/cloud/cloud.cfg /etc/cloud/cloud.cfg.d 2>/dev/null | head -n 1 || true"
+  register: cloudinit_hosts
+  changed_when: false
+  failed_when: false
+  tags: [dns]
+
+- name: Decide if /etc/hosts is safe to manage
+  ansible.builtin.set_fact:
+    cloudinit_manages_hosts: "{{ (cloudinit_hosts.stdout is search('manage_etc_hosts:\s*true')) | bool }}"
+  tags: [dns]
+
+- name: Manage /etc/hosts (skip if cloud-init manages it)
+  ansible.builtin.blockinfile:
+    path: /etc/hosts
+    marker: "# {mark} ANSIBLE LAB HOSTS"
+    block: |
+      {% for h in groups['all'] %}
+      {{ hostvars[h].ansible_host }} {{ hostvars[h].inventory_hostname }}.{{ dc_domain }} {{ hostvars[h].inventory_hostname }}
+      {% endfor %}
+  when:
+    - manage_etc_hosts | bool
+    - not cloudinit_manages_hosts
+  tags: [dns]
+
+- name: Manage resolv.conf to point to internal DNS
+  ansible.builtin.copy:
+    dest: /etc/resolv.conf
+    content: |
+      nameserver {{ dns_server_ip }}
+      search {{ dc_domain }}
+      options timeout:1 attempts:2
+    owner: root
+    group: root
+    mode: "0644"
+  when: manage_resolv_conf | bool
+  tags: [dns]
+
+- name: Smoke test DNS resolution (from host)
+  ansible.builtin.shell: "getent hosts proxy01.{{ dc_domain }} | awk '{print $1}' | head -n 1"
+  register: dns_smoke
+  changed_when: false
+  failed_when: dns_smoke.stdout == ""
+  tags: [dns]

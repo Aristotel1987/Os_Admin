@@ -1,0 +1,9 @@
+- name: restart clickhouse
+  ansible.builtin.service:
+    name: clickhouse-server
+    state: restarted
+
+- name: reload clickhouse config
+  ansible.builtin.command: clickhouse-client --query="SYSTEM RELOAD CONFIG"
+  changed_when: false
+  failed_when: false

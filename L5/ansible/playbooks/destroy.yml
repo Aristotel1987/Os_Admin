@@ -1,0 +1,33 @@
+- hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Stop services (best-effort)
+      ansible.builtin.service:
+        name: "{{ item }}"
+        state: stopped
+        enabled: false
+      loop:
+        - keepalived
+        - nginx
+        - dnsmasq
+        - zookeeper
+        - clickhouse-server
+      ignore_errors: true
+
+    - name: Remove configs (best-effort)
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      loop:
+        - /etc/nginx/conf.d/clickhouse_lb.conf
+        - /etc/keepalived/keepalived.conf
+        - /usr/local/bin/on_vip_master.sh
+        - /usr/local/bin/on_vip_backup.sh
+        - /etc/dnsmasq.d/dc-local.conf
+        - /etc/nftables.conf
+        - /etc/clickhouse-server/config.d/zookeeper.xml
+        - /etc/clickhouse-server/config.d/remote_servers.xml
+        - /etc/clickhouse-server/users.d/99-lab-admin.xml
+        - /etc/clickhouse-server/create_tables.sql
+      ignore_errors: true

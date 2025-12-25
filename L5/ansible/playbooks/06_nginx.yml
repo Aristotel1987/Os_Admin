@@ -1,0 +1,5 @@
+- hosts: proxy
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_nginx_proxy, tags: [nginx] }

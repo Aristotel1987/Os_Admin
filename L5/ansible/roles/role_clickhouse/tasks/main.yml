@@ -1,0 +1,112 @@
+- name: Ensure offline deb dir exists on controller
+  ansible.builtin.stat:
+    path: "{{ ch_offline_deb_dir }}"
+  delegate_to: localhost
+  become: false
+  register: debdir
+  tags: [ch]
+
+- name: Fail if offline deb dir missing
+  ansible.builtin.fail:
+    msg: "ClickHouse .deb not found at {{ ch_offline_deb_dir }}. Put .deb into ansible/artifacts/clickhouse/deb/"
+  when: not debdir.stat.exists
+  tags: [ch]
+
+- name: Copy debs to node
+  ansible.builtin.copy:
+    src: "{{ ch_offline_deb_dir }}/"
+    dest: /tmp/clickhouse-deb/
+    owner: root
+    group: root
+    mode: "0644"
+  tags: [ch]
+
+- name: Find debs on node
+  ansible.builtin.find:
+    paths: /tmp/clickhouse-deb
+    patterns: "*.deb"
+  register: ch_debs
+  tags: [ch]
+
+- name: Fail if no debs were found
+  ansible.builtin.fail:
+    msg: "No .deb files in /tmp/clickhouse-deb. Check artifacts/clickhouse/deb/"
+  when: (ch_debs.files | length) == 0
+  tags: [ch]
+
+- name: Install ClickHouse debs (local)
+  ansible.builtin.apt:
+    deb: "{{ item.path }}"
+    state: present
+  loop: "{{ ch_debs.files | sort(attribute='path') }}"
+  tags: [ch]
+
+- name: Ensure clickhouse-server enabled and running
+  ansible.builtin.service:
+    name: clickhouse-server
+    enabled: true
+    state: started
+  tags: [ch]
+
+- name: Deploy zookeeper.xml
+  ansible.builtin.template:
+    src: config.d/zookeeper.xml.j2
+    dest: /etc/clickhouse-server/config.d/zookeeper.xml
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart clickhouse
+  tags: [ch]
+
+- name: Deploy remote_servers.xml
+  ansible.builtin.template:
+    src: config.d/remote_servers.xml.j2
+    dest: /etc/clickhouse-server/config.d/remote_servers.xml
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart clickhouse
+  tags: [ch]
+
+- name: Deploy admin user
+  ansible.builtin.template:
+    src: users.d/99-lab-admin.xml.j2
+    dest: /etc/clickhouse-server/users.d/99-lab-admin.xml
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart clickhouse
+  tags: [ch]
+
+- name: Flush handlers (restart if configs changed)
+  ansible.builtin.meta: flush_handlers
+  tags: [ch]
+
+- name: Wait for ClickHouse HTTP port
+  ansible.builtin.wait_for:
+    host: 127.0.0.1
+    port: "{{ ch_http_port }}"
+    timeout: 60
+  tags: [ch]
+
+- name: Render demo SQL on node
+  ansible.builtin.template:
+    src: create_tables.sql.j2
+    dest: /etc/clickhouse-server/create_tables.sql
+    owner: root
+    group: root
+    mode: "0644"
+  tags: [ch]
+
+- name: Apply demo SQL (idempotent)
+  ansible.builtin.command: "clickhouse-client --multiquery --query=@/etc/clickhouse-server/create_tables.sql"
+  register: ddl
+  changed_when: false
+  failed_when: false
+  tags: [ch]
+
+- name: Smoke query (local)
+  ansible.builtin.command: "clickhouse-client --query=SELECT\ hostName\(\),\ version\(\)"
+  register: smoke
+  changed_when: false
+  tags: [ch]

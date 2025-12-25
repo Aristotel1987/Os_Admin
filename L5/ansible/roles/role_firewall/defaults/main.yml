@@ -1,0 +1,4 @@
+fw_enable: true
+fw_mgmt_ssh_port: 22
+fw_log_drops: true
+lab_subnet_cidr: 10.10.0.0/24

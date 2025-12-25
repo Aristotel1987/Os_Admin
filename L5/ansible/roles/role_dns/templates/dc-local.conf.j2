@@ -1,0 +1,19 @@
+# Managed by Ansible (role_dns)
+domain-needed
+bogus-priv
+no-resolv
+no-hosts
+cache-size=1000
+
+listen-address=127.0.0.1
+{% if ansible_default_ipv4.address is defined %}
+listen-address={{ ansible_default_ipv4.address }}
+{% endif %}
+
+local=/{{ dc_domain }}/
+domain={{ dc_domain }}
+
+# Host records from inventory
+{% for h in groups['all'] %}
+host-record={{ hostvars[h].inventory_hostname }}.{{ dc_domain }},{{ hostvars[h].ansible_host }}
+{% endfor %}

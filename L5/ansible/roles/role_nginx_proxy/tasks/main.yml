@@ -1,0 +1,32 @@
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+  tags: [nginx]
+
+- name: Deploy nginx LB config
+  ansible.builtin.template:
+    src: clickhouse_lb.conf.j2
+    dest: /etc/nginx/conf.d/clickhouse_lb.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: reload nginx
+  tags: [nginx]
+
+- name: Ensure nginx enabled and running
+  ansible.builtin.service:
+    name: nginx
+    enabled: true
+    state: started
+  tags: [nginx]
+
+- name: Ensure JSON access log file exists (touch)
+  ansible.builtin.file:
+    path: /var/log/nginx/access.json
+    state: touch
+    owner: www-data
+    group: adm
+    mode: "0644"
+  tags: [nginx]

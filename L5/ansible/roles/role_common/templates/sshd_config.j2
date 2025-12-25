@@ -1,0 +1,14 @@
+# Managed by Ansible (role_common)
+Port 22
+Protocol 2
+PermitRootLogin no
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+{% if ssh_allow_users|length > 0 %}
+AllowUsers{% for u in ssh_allow_users %} {{ u }}{% endfor %}
+{% endif %}

@@ -1,0 +1,49 @@
+#!/usr/sbin/nft -f
+# Managed by Ansible (role_firewall)
+
+flush ruleset
+
+table inet filter {
+  chain input {
+    type filter hook input priority 0;
+    policy drop;
+
+    iif "lo" accept
+    ct state established,related accept
+    ip protocol icmp accept
+    ip6 nexthdr icmpv6 accept
+
+    # management SSH inside lab subnet
+    ip saddr {{ lab_subnet_cidr }} tcp dport {{ fw_mgmt_ssh_port }} accept
+
+    {% if 'proxy' in group_names %}
+    # HTTP
+    tcp dport 80 accept
+    # VRRP protocol 112 only from other proxy
+    {% set proxy_ips = [] %}
+    {% for p in groups['proxy'] %}
+    {% set _ = proxy_ips.append(hostvars[p].ansible_host) %}
+    {% endfor %}
+    ip protocol vrrp ip saddr { {{ proxy_ips | join(', ') }} } accept
+    {% endif %}
+
+    {% if 'zookeeper' in group_names %}
+    # ZK ports from lab subnet (zk + ch)
+    ip saddr {{ lab_subnet_cidr }} tcp dport { 2181, 2888, 3888 } accept
+    {% endif %}
+
+    {% if 'clickhouse' in group_names %}
+    # CH ports from lab subnet (proxy)
+    ip saddr {{ lab_subnet_cidr }} tcp dport { {{ ch_http_port|default(8123) }}, {{ ch_tcp_port|default(9000) }} } accept
+    {% endif %}
+
+    {% if fw_log_drops | bool %}
+    limit rate 10/second counter log prefix "nft-drop " flags all drop
+    {% else %}
+    drop
+    {% endif %}
+  }
+
+  chain forward { type filter hook forward priority 0; policy drop; }
+  chain output  { type filter hook output priority 0; policy accept; }
+}

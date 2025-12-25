@@ -1,0 +1,50 @@
+- name: Install zookeeperd
+  ansible.builtin.apt:
+    name: zookeeperd
+    state: present
+    update_cache: true
+  tags: [zk]
+
+- name: Ensure data dir exists
+  ansible.builtin.file:
+    path: "{{ zk_data_dir }}"
+    state: directory
+    owner: zookeeper
+    group: zookeeper
+    mode: "0755"
+  tags: [zk]
+
+- name: Write myid
+  ansible.builtin.copy:
+    dest: "{{ zk_data_dir }}/myid"
+    content: "{{ hostvars[inventory_hostname].myid | default(1) }}
+"
+    owner: zookeeper
+    group: zookeeper
+    mode: "0644"
+  notify: restart zookeeper
+  tags: [zk]
+
+- name: Deploy zoo.cfg
+  ansible.builtin.template:
+    src: zoo.cfg.j2
+    dest: /etc/zookeeper/conf/zoo.cfg
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart zookeeper
+  tags: [zk]
+
+- name: Ensure zookeeper enabled and running
+  ansible.builtin.service:
+    name: zookeeper
+    enabled: true
+    state: started
+  tags: [zk]
+
+- name: Healthcheck ruok -> imok (local)
+  ansible.builtin.shell: "echo ruok | nc -w 2 127.0.0.1 {{ zk_client_port }} | tr -d '\r\n'"
+  register: ruok
+  changed_when: false
+  failed_when: ruok.stdout != 'imok'
+  tags: [zk]

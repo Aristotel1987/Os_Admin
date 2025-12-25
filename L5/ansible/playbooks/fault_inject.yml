@@ -1,0 +1,31 @@
+- hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Stop one ClickHouse node (demo) ch-s1-r1
+      ansible.builtin.service:
+        name: clickhouse-server
+        state: stopped
+      when: inventory_hostname == 'ch-s1-r1'
+      tags: [ch]
+
+    - name: Start ClickHouse back (optional tag ch-up)
+      ansible.builtin.service:
+        name: clickhouse-server
+        state: started
+      when: inventory_hostname == 'ch-s1-r1'
+      tags: [ch_up]
+
+    - name: Stop one ZooKeeper node (demo) zk01
+      ansible.builtin.service:
+        name: zookeeper
+        state: stopped
+      when: inventory_hostname == 'zk01'
+      tags: [zk]
+
+    - name: Start ZooKeeper back (optional tag zk-up)
+      ansible.builtin.service:
+        name: zookeeper
+        state: started
+      when: inventory_hostname == 'zk01'
+      tags: [zk_up]

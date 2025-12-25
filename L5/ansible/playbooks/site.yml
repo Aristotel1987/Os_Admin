@@ -1,0 +1,56 @@
+- name: common
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_common, tags: [common] }
+  tags: [common]
+
+- name: dns
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_dns, tags: [dns] }
+  tags: [dns]
+
+- name: firewall
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_firewall, tags: [fw] }
+  tags: [fw]
+
+- name: zookeeper
+  hosts: zookeeper
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_zookeeper, tags: [zk] }
+  tags: [zk]
+
+- name: clickhouse (rolling)
+  hosts: clickhouse
+  become: true
+  gather_facts: true
+  serial: 3
+  roles:
+    - { role: role_clickhouse, tags: [ch] }
+  tags: [ch]
+
+- name: nginx
+  hosts: proxy
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_nginx_proxy, tags: [nginx] }
+  tags: [nginx]
+
+- name: keepalived
+  hosts: proxy
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_keepalived, tags: [keepalived] }
+  tags: [keepalived]

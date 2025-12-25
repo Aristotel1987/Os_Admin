@@ -1,0 +1,14 @@
+# Managed by Ansible (role_keepalived)
+vrrp_instance VI_1 {
+  state {{ keepalived_state }}
+  interface {{ keepalived_interface }}
+  virtual_router_id {{ keepalived_vrid }}
+  priority {{ keepalived_priority }}
+  advert_int 1
+  authentication { auth_type PASS; auth_pass {{ keepalived_authpass }}; }
+  virtual_ipaddress { {{ keepalived_vip }}/24 dev {{ keepalived_interface }} }
+  garp_master_delay 1
+  garp_master_repeat 3
+  notify_master "/usr/local/bin/on_vip_master.sh"
+  notify_backup "/usr/local/bin/on_vip_backup.sh"
+}

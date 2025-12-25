@@ -1,0 +1,6 @@
+ch_http_port: 8123
+ch_tcp_port: 9000
+cluster_name: cluster_3x3
+ch_admin_user: admin
+ch_admin_password: admin123
+ch_offline_deb_dir: ""

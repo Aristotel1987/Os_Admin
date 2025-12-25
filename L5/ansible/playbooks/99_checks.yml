@@ -1,0 +1,5 @@
+- hosts: proxy01
+  become: true
+  gather_facts: true
+  roles:
+    - { role: role_checks, tags: [checks] }

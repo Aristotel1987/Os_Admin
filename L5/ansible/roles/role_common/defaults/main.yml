@@ -1,0 +1,4 @@
+common_timezone: UTC
+common_locale: en_US.UTF-8
+ssh_allow_users: []
+bootstrap: false

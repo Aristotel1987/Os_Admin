@@ -1,0 +1,5 @@
+dns_mode: dnsmasq
+dc_domain: dc.local
+dns_server_ip: 10.10.0.21
+manage_resolv_conf: true
+manage_etc_hosts: true

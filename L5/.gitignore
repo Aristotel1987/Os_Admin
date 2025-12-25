@@ -1,0 +1,4 @@
+*.retry
+*.log
+ansible/checks/*.txt
+ansible/artifacts/clickhouse/deb/*.deb

@@ -1,0 +1,41 @@
+- name: Install keepalived
+  ansible.builtin.apt:
+    name: keepalived
+    state: present
+    update_cache: true
+  tags: [keepalived]
+
+- name: Define MASTER/BACKUP and priority
+  ansible.builtin.set_fact:
+    keepalived_state: "{{ 'MASTER' if inventory_hostname == 'proxy01' else 'BACKUP' }}"
+    keepalived_priority: "{{ 150 if inventory_hostname == 'proxy01' else 100 }}"
+  tags: [keepalived]
+
+- name: Deploy notify scripts
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "/usr/local/bin/{{ item }}"
+    owner: root
+    group: root
+    mode: "0755"
+  loop:
+    - on_vip_master.sh
+    - on_vip_backup.sh
+  tags: [keepalived]
+
+- name: Deploy keepalived.conf
+  ansible.builtin.template:
+    src: keepalived.conf.j2
+    dest: /etc/keepalived/keepalived.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart keepalived
+  tags: [keepalived]
+
+- name: Ensure keepalived enabled and running
+  ansible.builtin.service:
+    name: keepalived
+    enabled: true
+    state: started
+  tags: [keepalived]
